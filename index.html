@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantillas HTML</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/boton.css" />
+    <link rel="stylesheet" href="css/buscador.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <div class="banner">
+        <h1>Plantillas HTML modernas</h1>
+        <p>Diseño adaptable, moderno y con funciones interactivas</p>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header">
+            <nav>
+                <ul>
+                    <li><a href="#features">Ventajas</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#mimodal" id="openModal">Condiciones de compra</a>
+                    </li>
+                    <ul>
+                        <nav>
+        </div>
+    </header>
+
+    <!-- buscador plantillas -->
+    <div class="want">
+        <h1 class="bq">🔍 Buscador de plantillas
+            <input type="text" id="buscador" placeholder="Escribe para buscar..." onkeyup="filtrar()">
+        </h1>
+
+        <ul id="lista" class="bqul">
+            <li class="bqli"><a href="plantilla-restaurante/" class="enlace" target="_blank"
+                    rel="noopener noreferrer">Restaurante</a></li>
+            <li class="bqli"><a href="plantilla-fisio/" class="enlace" target="_blank"
+                    rel="noopener noreferrer">Fisioterapia</a></li>
+            <li class="bqli"><a href="plantilla-peluqueria/" class="enlace" target="_blank"
+                    rel="noopener noreferrer">Peluqueria</a></li>
+            <li class="bqli"><a href="plantilla-bogados/" class="enlace" target="_blank"
+                    rel="noopener noreferrer">Abogados</a></li>
+            <li class="bqli"><a href="plantilla-barberia/" class="enlace" target="_blank"
+                    rel="noopener noreferrer">Barberia</a></li>
+        </ul>
+    </div>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h3>Condiciones de compra</h3>
+            <ul>
+                <li>✅ <strong>pago se realiza mediante tarjeta o PayPal.</strong> </li>
+                <li>📦 <strong>Recibirás la plantilla via email en un plazo de 24 horas.</strong></li>
+                <li>🔄 <strong>Incluye actualizaciones gratuitas durante 3 meses.</strong></li>
+                <li>📧 <strong>Soporte técnico disponible vía email o whatsapp.</strong></li>
+                <li>🚫 <strong>No se admiten devoluciones una vez enviado el archivo.</strong></li>
+                <li>📧 <strong>Al realizar el pago aceptas esta condiciones.</strong></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- plantillas html -->
+    <section id="templates" class="templates">
+        <div class="container">
+            <h1>Plantillas HTML</h1>
+            <div class="grid">
+                <div class="template-card">
+                    <img src="images/sobreABG.jpg" alt="Plantilla Abogados" />
+                    <h4>ABOGADOS</h4>
+                    <p>Donde el conocimiento legal se convierte en resultados.</p>
+                    <p>Precio: 15 €</p>
+                    <a href="plantilla-bogados/index.html" class="btn" target="_blank"
+                        rel="noopener noreferrer">Ver demo</a>
+                </div>
+
+                <div class="template-card">
+                    <img src="images/barberia.jpg" alt="Plantilla Barberia" />
+                    <h4>BARBERIA</h4>
+                    <p>Tradición en cada tijera, carácter en cada barba.</p>
+                    <p>Precio: 15 €</p>
+                    <a href="plantilla-barberia/index.html" class="btn" target="_blank"
+                        rel="noopener noreferrer">Ver demo</a>
+                </div>
+
+                <div class="template-card">
+                    <img src="images/fisio.jpg" alt="Plantilla Agencia Pro" />
+                    <h4>FISIOTERAPIA</h4>
+                    <p>Diseño elegante para agencias creativas y freelancers.</p>
+                    <p>Precio: 15 €</p>
+                    <a href="plantilla-fisio/index.html" class="btn" target="_blank"
+                        rel="noopener noreferrer">Ver demo</a>
+                </div>
+                <div class="template-card">
+                    <img src="images/peluqueria.jpg" alt="Plantilla Agencia Pro" />
+                    <h4>PELUQUERIA</h4>
+                    <p>Donde entras como señor y sales como caballero.</p>
+                    <p>Precio: 15 €</p>
+                    <a href="plantilla-peluqueria/index.html" class="btn" target="_blank"
+                        rel="noopener noreferrer">Ver demo</a>
+                </div>
+                <div class="template-card">
+                    <img src="images/proyectos.jpg" alt="Plantilla Agencia Pro" />
+                    <h4>PROYECTOS</h4>
+                    <p>Expone tu arte al mundo.</p>
+                    <p>Precio: 15 €</p>
+                    <a href="plantilla-proyectos/index.html" class="btn" target="_blank"
+                        rel="noopener noreferrer">Ver demo</a>
+                </div>
+                <div class="template-card">
+                    <img src="images/restaurante.jpg" alt="Plantilla Agencia Pro" />
+                    <h4 id="restaurante">RESTAURANTE</h4>
+                    <p>Dale un toque perfecto a tus platos.</p>
+                    <p>Precio: 15 €</p>
+                    <a href="plantilla-restaurante/index.html" class="btn" target="_blank"
+                        rel="noopener noreferrer">Ver demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <h1>Ventajas de comprar una plantilla web</h1>
+            <div class="grid">
+                <div class="feature">
+                    <h4>Responsive</h4>
+                    <p>Se adapta a móviles, tablets y ordenadores.</p>
+                </div>
+                <div class="feature">
+                    <h4>Ahorro</h4>
+                    <p>Ahorro de tiempo en dinero y desarrollo</p>
+                </div>
+                <div class="feature">
+                    <h4>Editable</h4>
+                    <p>Modifica textos y colores fácilmente.</p>
+                </div>
+                <div class="feature">
+                    <h4>Personalizacion</h4>
+                    <p>Personalizacion a medida de tus necesidades.</p>
+                </div>
+                <div class="feature">
+                    <h4>Elegante</h4>
+                    <p>Estilo profesional y moderno.</p>
+                </div>
+                <div class="feature">
+                    <h4>Soporte</h4>
+                    <p>Necesitas ayuda contacta con nosotros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <p></p>
+
+    <!-- cookies -->
+    <!-- Banner de Cookies -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <p><strong>🍪 Cookies con clase, como tu estilo</strong><br>
+                Usamos cookies para mejorar tu experiencia y ofrecer contenido personalizado.
+                Consulta nuestra <a href="privacidad.html" target="_blank" rel="noopener noreferrer">Política de
+                    Privacidad</a> y
+                <a href="politica-cookies.html" target="_blank" rel="noopener noreferrer">Política de Cookies</a>.
+            </p>
+            <div class="cookie-buttons">
+                <button onclick="acceptAllCookies()">Aceptar todas</button>
+                <button onclick="openCookieSettings()">Configurar preferencias</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="quienes-somos">
+        <img src="images/quienes_somos.jpg" alt="Equipo de trabajo">
+        <div class="contenido">
+            <h2>Quiénes Somos</h2>
+            <p>Somos un equipo apasionado por el diseño web, especializado en crear plantillas modernas, funcionales y
+                totalmente responsive. Nuestra misión es ayudarte a lanzar tu proyecto digital con estilo y eficiencia,
+                sin complicaciones técnicas.</p>
+        </div>
+    </section>
+
+
+    <!-- Contact -->
+    <footer id="contact">
+        <div class="container">
+            <p>¿Tienes dudas? Escríbenos a <strong><a href="mailto:chhc72@gmail.com">chhc72@gmail.com</a></strong></p>
+            <p>© 2025 Plantillas web</p>
+        </div>
+    </footer>
+
+    <!-- 💬 Botón flotante WhatsApp -->
+    <a href="https://wa.me/34622675828" target="_blank" class="whatsapp-float" title="Escríbeme por WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" />
+    </a>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

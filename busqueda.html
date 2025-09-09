@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Buscador con Enlaces</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f0f0f0;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      display: none;
+      margin-bottom: 10px;
+    }
+
+    a {
+      display: block;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #333;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
+    }
+
+    a:hover {
+      background-color: #e0e0e0;
+    }
+
+    .no-result {
+      display: none;
+      color: #999;
+      font-style: italic;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Buscador de Palabras con Enlaces</h2>
+  <input type="text" id="buscador" placeholder="Escribe una palabra...">
+
+  <ul id="lista">
+    <li><a href="https://es.wikipedia.org/wiki/Sol" target="_blank">Sol</a></li>
+    <li><a href="https://es.wikipedia.org/wiki/Luna" target="_blank">Luna</a></li>
+    <li><a href="https://es.wikipedia.org/wiki/Estrella" target="_blank">Estrella</a></li>
+    <li><a href="https://es.wikipedia.org/wiki/Cometa" target="_blank">Cometa</a></li>
+    <li><a href="https://es.wikipedia.org/wiki/Galaxia" target="_blank">Galaxia</a></li>
+    <li><a href="https://es.wikipedia.org/wiki/Planeta" target="_blank">Planeta</a></li>
+    <li><a href="https://es.wikipedia.org/wiki/Universo" target="_blank">Universo</a></li>
+  </ul>
+
+  <p id="mensaje" class="no-result">No se encontraron coincidencias.</p>
+
+  <script>
+    const input = document.getElementById('buscador');
+    const lista = document.getElementById('lista');
+    const mensaje = document.getElementById('mensaje');
+    const items = lista.getElementsByTagName('li');
+
+    input.addEventListener('input', () => {
+      const filtro = input.value.toLowerCase();
+      let encontrados = 0;
+
+      for (let i = 0; i < items.length; i++) {
+        const texto = items[i].textContent.toLowerCase();
+        if (texto.includes(filtro) && filtro !== '') {
+          items[i].style.display = 'block';
+          encontrados++;
+        } else {
+          items[i].style.display = 'none';
+        }
+      }
+
+      mensaje.style.display = encontrados === 0 && filtro !== '' ? 'block' : 'none';
+    });
+  </script>
+
+</body>
+</html>

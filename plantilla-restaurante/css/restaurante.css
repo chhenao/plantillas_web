@@ -1,0 +1,356 @@
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+    header video { width: 100%; height: auto; }
+    nav { background-color: #333; }
+    nav ul { display: flex; flex-wrap: wrap; justify-content: center; list-style: none; }
+    nav li { margin: 10px; }
+    nav a { color: white; text-decoration: none; padding: 10px; }
+    section { padding: 20px; }
+    @media (max-width: 600px) {
+      nav ul { flex-direction: column; }
+    }
+
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .video-container video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .texto-cabecera {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.3); /* ligero fondo para legibilidad */
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .texto-cabecera h1 {
+    font-size: 2.5rem;
+  }
+
+  .texto-cabecera p {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 600px) {
+    .texto-cabecera h1 {
+      font-size: 1.5rem;
+    }
+
+    .texto-cabecera p {
+      font-size: 1rem;
+    }
+  }
+
+  .bloques {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px;
+    background-color: #f4f4f4;
+  }
+
+  .bloque {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .bloque img {
+    max-width: 200px;
+    border-radius: 8px;
+  }
+
+  .bloque-texto {
+    flex: 1;
+  }
+
+  .bloque h2 {
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .bloque {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .bloque img {
+      max-width: 100%;
+    }
+  }
+
+  /* Secciones */
+ 
+  .bloques-restaurante {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 50px;
+    background-color: #fafafa;
+  }
+
+  .bloque {
+    display: flex;
+    background-color: #e6e5e2;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .bloque img {
+    width: 40%;
+    object-fit: cover;
+  }
+
+  .bloque-contenido {
+    padding: 30px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .bloque-contenido h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #333;
+  }
+
+  .bloque-contenido p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .bloque {
+      flex-direction: column;
+    }
+
+    .bloque img,
+    .bloque-contenido {
+      width: 100%;
+    }
+  }
+
+  /* 💬 WhatsApp Button */
+ .whatsapp-float {
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   width: 60px;
+   height: 60px;
+   background-color: #25D366;
+   border-radius: 50%;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 999;
+   transition: transform 0.3s;
+ }
+
+ .whatsapp-float:hover {
+   transform: scale(1.1);
+ }
+
+ .whatsapp-float img {
+   width: 30px;
+   height: 30px;
+ }
+
+     /* Sobre nosotros */
+ .about-restaurant {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: #fff8f0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.about-text {
+  flex: 1 1 45%;
+  padding-right: 30px;
+}
+
+.about-text h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #8b4513;
+}
+
+.about-text p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #4b3f2f;
+  margin-bottom: 15px;
+}
+
+.about-image {
+  flex: 1 1 45%;
+  text-align: right;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Redes sociales */
+.social-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #fff8f0, #fce4d6);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.social-section h2 {
+  font-size: 2.5em;
+  color: #8b4513;
+  margin-bottom: 10px;
+}
+
+.social-section p {
+  font-size: 1.2em;
+  color: #5a4632;
+  margin-bottom: 30px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1em;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+}
+
+.icon i {
+  font-size: 1.5em;
+}
+
+.instagram {
+  background-color: #e1306c;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.tiktok {
+  background-color: #000;
+}
+
+.youtube {
+  background-color: #e63d0a;
+}
+
+.icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* footer */
+
+.restaurant-footer {
+  background-color: #2e1f14;
+  color: #f5f5f5;
+  padding: 40px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section h3 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #f4c095;
+}
+
+.footer-section p {
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+.map-container iframe {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+  /* boton flotante volver arriba */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background-color: #a7a405;
+  color: white;
+  font-size: 1.5em;
+  padding: 12px 16px;
+  border-radius: 80%;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  display: none; /* Oculto por defecto */
+}
+
+.scroll-top:hover {
+  background-color: #098ac5;
+  transform: scale(1.1);
+}
+
+
+
+
+
