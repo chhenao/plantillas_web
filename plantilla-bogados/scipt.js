@@ -41,10 +41,30 @@
       });
     });
 
+  
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  const hamburger = document.querySelector('.hamburger');
+  const closeMenuIcon = document.querySelector('.close-menu');
 
+  navLinks.classList.add('active');
+  hamburger.style.display = 'none';
+  closeMenuIcon.style.display = 'block';
+}
 
-    function toggleMenu() {
-      const nav = document.getElementById('navLinks');
-      nav.classList.toggle('active');
-    }
- 
+function closeMenu() {
+  const navLinks = document.getElementById('navLinks');
+  const hamburger = document.querySelector('.hamburger');
+  const closeMenuIcon = document.querySelector('.close-menu');
+
+  navLinks.classList.remove('active');
+  hamburger.style.display = 'block';
+  closeMenuIcon.style.display = 'none';
+}
+
+// Cierra el menú al hacer clic en cualquier enlace
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    closeMenu();
+  });
+});
