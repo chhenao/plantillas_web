@@ -14,84 +14,52 @@
 </head>
 
 <body>
-
+   <!-- Navegación -->
   <nav class="navbar" id="inicio">
-    <div class="logo">
-      <img src="images/logo.png" alt="Logo AMG">
-      <span>ABG Legal</span>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div class="nav-links" id="navLinks">
-      <div class="dropdown">
-        <a href="#areas">Áreas De Práctica</a>
-        <div class="dropdown-content">
-          <a href="#">Civil</a><br>
-          <a href="#">Penal</a><br>
-          <a href="#">Laboral</a>
-        </div>
-      </div>
-      <a href="#preguntas">Preguntas Frecuentes</a>
-      <a href="#conocenos">Conócenos</a>      
-      <a href="#contacto">Contacto</a>
-      <a class="btn btn-primary" href="https://www.paypal.com/ncp/payment/UXG6NGJK3Y76J" target="_blank"
-            role="button" rel="noopener noreferrer">Comprar
-            plantilla</a>
+  <div class="logo">
+    <img src="images/logo.png" alt="Logo AMG">
+    <span>ABG Legal</span>
+  </div>
 
+  <!-- Ícono de hamburguesa -->
+  <div class="hamburger" onclick="toggleMenu()">
+  <span class="hamburger-icon">&#9776;</span>
+</div>
+
+  <!-- Ícono de cierre -->
+  <div class="close-menu" onclick="closeMenu()">
+    <span>&times;</span>
+  </div>
+
+  <div class="nav-links" id="navLinks">
+    <div class="dropdown">
+      <a href="#areas" class="nav-item">Áreas De Práctica</a>
+      <div class="dropdown-content">
+        <a href="#" class="nav-item">Civil</a>
+        <a href="#" class="nav-item">Penal</a>
+        <a href="#" class="nav-item">Laboral</a>
+      </div>
     </div>
-  </nav>
+    <a href="#preguntas" class="nav-item">Preguntas Frecuentes</a>
+    <a href="#conocenos" class="nav-item">Conócenos</a>
+    <a href="#contacto" class="nav-item">Contacto</a>
+    <a class="btn btn-primary nav-item" href="https://www.paypal.com/ncp/payment/UXG6NGJK3Y76J" target="_blank" rel="noopener noreferrer">Comprar plantilla</a>
+  </div>
+</nav>
+
+<!-- fin menu navegacion -->
+
   <p></p>
   <div class="phone">
     <h3>Llama gratis: 900 123 123</h3>
   </div>
 
   <div class="header">
-    <div class="text-content">
+    <div class="">
       <h4>Marca tu nuevo rumbo</h4>
       <h1>ABOGADOS EXPERTOS EN HERENCIAS</h1>
-      <p>Gestión y liquidación rápida de herencias.</p>
-      <button class="btn">CONTACTA</button>
+      <p>Gestión y liquidación rápida de herencias.</p>      
     </div>
-    <!--<div class="contact-form">
-      <h2>CONTACTA CON NOSOTROS</h2>
-      <p>Te responderemos lo antes posible.</p>
-      <input type="text" placeholder="Tu Nombre">
-      <input type="email" placeholder="Email">
-      <input type="tel" placeholder="Teléfono">
-      <textarea rows="4" placeholder="Cuéntanos tu caso"></textarea>
-
-
-      <div class="recaptcha">
-        Inscibe tu sitio web a google reCAPTCHA v2 para mas seguridad de pagina web
-        <input type="checkbox"> No soy un robot<br>
-        <a href="#">Privacidad</a> · <a href="#">Términos</a>
-      </div>
-      <button class="btn bnt-primary">Enviar Consulta</button>
-    </div>-->
-
-    <div class="contact-form">
-      <form action="https://formsubmit.co/chhc72@gmail.com" method="POST">
-        <h2>Formulario de Contacto</h2>
-
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-
-        <!-- Protección contra spam -->
-        <input type="hidden" name="_captcha" value="false">
-
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
-
   </div>
 
   <div class="phone" id="conocenos">
