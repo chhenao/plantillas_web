@@ -11,113 +11,138 @@ html {
   color: white;
 }
 
-/* Cabecera con imagen de fondo */
-header {
-  background-image: url('../images/cabecera.jpg');
-  /* Reemplaza con tu imagen */
-  background-size: cover;
-  background-position: center;
-  height: 80vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+/* Estilos del encabezado y la navegación */
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Menú de navegación */
 nav {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  padding: 20px 40px;
+  background-color: #111;
+  color: white;
+  padding: 1rem;
+}
+
+.nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .menu {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 1.5rem;
 }
 
 .menu li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
 }
 
-.menu li a:hover {
-  color: #e63946;
-}
-
-/* Íconos sociales */
 .social-icons {
   display: flex;
-  gap: 15px;
+  gap: 1rem;
 }
 
-.social-icons a {
+.btn-primary {
+  background-color: #007bff;
   color: white;
-  font-size: 1.2em;
-  transition: color 0.3s;
-}
-
-.social-icons a:hover {
-  color: #e63946;
-}
-
-/* Texto central */
-.hero-text h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-  color: #ffffff;
-}
-
-.hero-text p {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-  color: #ffffff;
-}
-
-.cta-button {
-  background-color: #e63946;
-  color: white;
-  padding: 15px 30px;
-  border: none;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
-  font-size: 1em;
   text-decoration: none;
-  transition: background-color 0.3s;
 }
 
-.cta-button:hover {
-  background-color: #d62828;
+/* Hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+}
+
+/* Botón de cierre */
+.close-btn {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #222;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    padding: 2rem 0;
+    display: none;
+    z-index: 1000;
   }
- 
 
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
+  .menu.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .close-btn.active {
+    display: block;
   }
 
   .social-icons {
-    margin-top: 10px;
+    display:none;
   }
+}
+/***********************/
+
+/* header*/
+header {
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background-image: url('../images/cabecera.jpg'); /* Reemplaza con tu imagen */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+  text-align: center;
+  color: white; /* Asegúrate de que el texto sea visible sobre la imagen */
+}
+
+.hero-text {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor legibilidad */
+  padding: 2rem;
+  border-radius: 10px;
 }
 
 
+
+ 
 .servicios {
   padding: 40px 20px;
   text-align: center;
