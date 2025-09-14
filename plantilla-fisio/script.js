@@ -56,13 +56,17 @@ function aceptarCookies() {
       const item = button.parentElement;
       item.classList.toggle('active');
     });
+  }); 
+
+    // menu navegacion
+       
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  toggleBtn.addEventListener('click', () => {
+    toggleBtn.classList.toggle('active');
+    navLinks.classList.toggle('show');
   });
-
-   function toggleMenu() {
-      const nav = document.getElementById('navLinks');
-      nav.classList.toggle('active');
-    }
-
-  
+ 
 
  
