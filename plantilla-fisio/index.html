@@ -14,43 +14,42 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="#inicio">
-          <img src="images/logo.png" alt="Logo FisioVida">
-        </a>
-      </div>
-      <ul>
-        <li><a href="#quienes">Quiénes somos</a></li>
-        <li><a href="#servicios">Servicios y especialidades</a></li>
-        <li><a href="#equipo">Nuestro equipo</a></li>
-        <li><a href="#promos">Terapias y promociones</a></li>
-        <li><a href="#blog">Noticias y blog</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <a class="btn btn-primary" href="https://www.paypal.com/ncp/payment/BK8J37SJAG324" target="_blank"
-            role="button" rel="noopener noreferrer">Comprar
-            plantilla</a>
-      </ul>
-      <div class="idioma">
-        <select>
-          <option>ES</option>
-          <option>EN</option>
-        </select>
-      </div>
-    </nav>
-  </header>
+   
+ 
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#inicio">
+        <img src="images/logo.png" alt="Logo FisioVida">
+      </a>
+    </div>
 
-  <section class="hero" id="inicio">
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <span class="hamburger"></span>
+    </button>
+
+    <ul class="nav-links">
+      <li><a href="#quienes">Quiénes somos</a></li>
+      <li><a href="#servicios">Servicios y especialidades</a></li>
+      <li><a href="#equipo">Nuestro equipo</a></li>  
+      <li><a href="#contacto">Contacto</a></li>
+      <li>
+        <a class="btn btn-primary" href="https://www.paypal.com/ncp/payment/BK8J37SJAG324" target="_blank" rel="noopener noreferrer">
+          Comprar plantilla
+        </a>
+      </li>
+    </ul>
+  </nav> 
+
+  <header> 
     <img src="images/postoperatoria.jpg" alt="Imagen de cabecera de fisioterapia">
     <div class="hero-text">
       <h2>Clínica de Fisioterapia Madrid</h2>
       <p>Tu centro de salud y bienestar integral</p>
       <a href="#contacto" class="cta-button">Pide una cita</a>
     </div>
-  </section>
+ </header>
 
-  <section class="barra-servicios">
+  <section class="barra-servicios" id="servicios">
     <nav>
       <a href="#fisioterapia">Fisioterapia</a>
       <span>·</span>
@@ -90,7 +89,7 @@
     </div>
   </section>
 
-  <section class="quienes-somos">
+  <section class="quienes-somos" id="quienes">
     <div class="contenido">
       <div class="imagen">
         <img src="images/grupo.png" alt="Equipo de fisioterapia">
@@ -108,7 +107,7 @@
 
   <!--Nuestro equipo">-->
 
-  <section class="equipo-fisiovida">
+  <section class="equipo-fisiovida" id="equipo">
     <h2>Nuestro Equipo Profesional</h2>
     <div class="tarjetas">
       <div class="tarjeta">
@@ -288,11 +287,11 @@
 
   <!-- Aviso de Cookies -->
   <div id="cookie-banner">
-    <span >
+    <span>
       Utilizamos cookies para mejorar tu experiencia en nuestro sitio. Al continuar navegando, aceptas nuestra <a
         href="politica-cookies.html" target="_blank" rel="noopener noreferrer">política de cookies</a> y
     </span>
-    <span >
+    <span>
       <a href="politica-privacidad.html" target="_blank" rel="noopener noreferrer">Politica de privacidad</a>.
     </span>
     <button onclick="aceptarCookies()">Aceptar</button>
@@ -308,12 +307,12 @@
       referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </div>
-     <p></p>
+  <p></p>
   <footer class="footer-fisiovida">
     <div class="footer-container">
 
       <!-- Columna izquierda: Logo + redes -->
-      <div class="footer-left">
+      <div class="footer-left" id="contacto">
         <img src="images/logo.png" alt="FISIOVIDA" class="footer-logo" />
         <div class="footer-social">
           <a href="https://www.instagram.com/fisiovida" target="_blank" aria-label="Instagram">
@@ -339,9 +338,9 @@
     <div class="footer-bottom">
       <p>© 2025 FISIOVIDA · Bienestar integral en cada paso. Todos los derechos reservados. </p>
     </div>
-  </footer> 
-  
-   <!-- 💬 Botón flotante WhatsApp -->
+  </footer>
+
+  <!-- 💬 Botón flotante WhatsApp -->
   <a href="https://wa.me/34600000000" target="_blank" class="whatsapp-float" title="Escríbeme por WhatsApp">
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" />
   </a>
