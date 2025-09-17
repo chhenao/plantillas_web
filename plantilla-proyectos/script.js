@@ -6,7 +6,7 @@
         document.getElementById("cookieModal").style.display = "flex";
       }
     };
-
+    /* Aceptar o rechazar cookies */
     function acceptCookies() {
       localStorage.setItem("cookiesAccepted", "true");
       document.getElementById("cookieModal").style.display = "none";
@@ -17,4 +17,20 @@
       document.getElementById("cookieModal").style.display = "none";
     }
   
- 
+ /* menu navegacion */
+ const hamburger = document.getElementById("hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  hamburger.classList.toggle("active"); // 🔥 activa la animación "X"
+});
+
+// Cerrar menú al hacer clic en un enlace
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    hamburger.classList.remove("active"); // 🔥 vuelve al menú hamburguesa
+  });
+});
+
