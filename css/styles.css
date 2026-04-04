@@ -37,8 +37,7 @@ nav ul {
   display: flex;
   gap: 1.5em;
   padding: 0;
-  margin: 20px 20PX;
-
+  margin: 20px 20px;
 }
 
 nav a {
@@ -104,7 +103,7 @@ footer {
   padding: 2em 0;
 }
 
-/* Responsive */
+/* Responsive general */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -131,10 +130,9 @@ footer {
 }
 
 .templates .grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2em;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
 /* Template Card */
@@ -142,7 +140,6 @@ footer {
   background-color: #f0efee;
   border-radius: 10px;
   padding: 1.5em;
-  max-width: 300px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
@@ -187,11 +184,16 @@ footer {
   background-color: #0056b3;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive tarjetas */
+@media (max-width: 900px) {
   .templates .grid {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .templates .grid {
+    grid-template-columns: 1fr;
   }
 
   .template-card {
@@ -199,8 +201,7 @@ footer {
   }
 }
 
-/* Contenido del modal */
-/* Modal base con fondo más claro */
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -210,12 +211,9 @@ footer {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.6);
-  /* fondo más claro */
   backdrop-filter: blur(4px);
-  /* efecto de desenfoque elegante */
 }
 
-/* Contenido del modal */
 .modal-content {
   background-color: var(--pastel-yellow);
   margin: 10% auto;
@@ -229,7 +227,6 @@ footer {
   font-size: 1rem;
 }
 
-/* Título y lista */
 .modal-content h3 {
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 1em;
@@ -246,7 +243,6 @@ footer {
   line-height: 1.4;
 }
 
-/* Botón cerrar */
 .close {
   color: #333;
   float: right;
@@ -267,13 +263,11 @@ footer {
   animation: pulse 3s infinite;
 }
 
-/* cookies banner */
-/* Estilo general */
+/* Cookies banner */
 body {
   font-family: 'Georgia', serif;
 }
 
-/* Banner */
 .cookie-banner {
   position: fixed;
   bottom: 0;
@@ -325,7 +319,6 @@ body {
   color: #7b4e2d;
 }
 
-/* Panel de configuración */
 .cookie-settings {
   display: none;
   position: fixed;
@@ -346,14 +339,13 @@ body {
   margin: 10px 0;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .cookie-buttons {
     flex-direction: column;
   }
 }
 
-/* titulos */
+/* Títulos */
 h1 {
   font-size: 50px;
   font-family: 'Arial Black', sans-serif;
@@ -366,47 +358,47 @@ h1 {
     5px 5px 0 #555;
 }
 
-/* quienes somos */
- .quienes-somos {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 50px;
-      background-color: #ffffff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+/* Quiénes somos */
+.quienes-somos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 50px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-    .quienes-somos img {
-      flex: 1 1 300px;
-      max-width: 50%;
-      height: auto;
-      border-radius: 10px;
-    }
+.quienes-somos img {
+  flex: 1 1 300px;
+  max-width: 50%;
+  height: auto;
+  border-radius: 10px;
+}
 
-    .quienes-somos .contenido {
-      flex: 2 1 400px;
-      padding: 20px;
-    }
+.quienes-somos .contenido {
+  flex: 2 1 400px;
+  padding: 20px;
+}
 
-    .quienes-somos h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #333;
-    }
+.quienes-somos h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
 
-    .quienes-somos p {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #555;
-    }
+.quienes-somos p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
 
-    @media (max-width: 768px) {
-      .quienes-somos {
-        flex-direction: column;
-        text-align: center;
-      }
+@media (max-width: 768px) {
+  .quienes-somos {
+    flex-direction: column;
+    text-align: center;
+  }
 
-      .quienes-somos .contenido {
-        padding: 20px 0;
-      }
-    }
+  .quienes-somos .contenido {
+    padding: 20px 0;
+  }
+}
