@@ -1,0 +1,30 @@
+   #cookie-banner {
+   position:fixed;
+   bottom:0;left:0;
+   width:100%;
+   background:#222;
+   color:#fff;
+   padding:20px;
+   text-align:center;
+   font-family:'Segoe UI',sans-serif;
+   z-index:9999;
+  }
+  span{
+    font-size:16px;
+  }
+
+  a {
+    color:#00aaff;
+    text-decoration:underline;
+  }
+
+  button {
+    margin-left:20px;
+    padding:10px 20px;
+    background:#00aaff;
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+  }
