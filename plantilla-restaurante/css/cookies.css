@@ -1,52 +1,68 @@
- 
-    /* Fondo oscuro para el modal */
-    #cookieModal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.6);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      
-    }
+/* Fondo oscuro para el modal */
+#cookieModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
-    /* Caja del modal */
-    .modal-content {
-      background-color: #fff;
-      padding: 20px 30px;
-      border-radius: 8px;
-      max-width: 400px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
+/* Caja del modal */
+.modal-content {
+  background-color: #fff8f0;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  border-top: 4px solid #8b4513;
+}
 
-    .modal-content h2 {
-      margin-top: 0;
-    }
+.modal-content h2 {
+  margin-top: 0;
+  color: #8b4513;
+  font-size: 1.4rem;
+}
 
-    .modal-content p {
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
+.modal-content p {
+  font-size: 14px;
+  color: #4b3f2f;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
 
-    .modal-content button {
-      padding: 10px 20px;
-      margin: 0 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+.modal-content a {
+  color: #8b4513;
+}
 
-    .accept-btn {
-      background-color: #4CAF50;
-      color: white;
-    }
+.modal-content button {
+  padding: 10px 25px;
+  margin: 5px 8px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: bold;
+  transition: transform 0.2s, opacity 0.2s;
+}
 
-    .decline-btn {
-      background-color: #f44336;
-      color: white;
-    }
+.modal-content button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.accept-btn {
+  background-color: #8b4513;
+  color: white;
+}
+
+.decline-btn {
+  background-color: #2e1f14;
+  color: #f4c095;
+}
