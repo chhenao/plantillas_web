@@ -71,3 +71,20 @@ function saveCookiePreferences() {
 
       lista.style.display = input && hayCoincidencias ? "block" : "none";
     }
+
+    // Hamburguesa
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('open');
+});
+
+// Cerrar al hacer clic en un enlace
+navMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('open');
+  });
+});
