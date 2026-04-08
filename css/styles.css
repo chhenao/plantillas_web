@@ -407,4 +407,66 @@ h1 {
     margin: 4px 0 8px;
     letter-spacing: 0.3px;
 }
+
+/* Hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburguesa animada al abrir */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  #nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #111; /* ajusta al color de tu header */
+    z-index: 999;
+  }
+
+  #nav-menu.open {
+    display: block;
+  }
+
+  #nav-menu ul {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  #nav-menu ul li {
+    text-align: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+}
 }
