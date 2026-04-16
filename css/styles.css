@@ -22,14 +22,18 @@ h4 {
 
 /* Header */
 header {
-  background-color: #222;
+  background-color: #bbbdce;
   color: #fff;
-  padding: 1em 0;
   width: 100%;
+  position: relative;
 }
 
-header .logo {
-  font-size: 1.8em;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8em 2em;
+ 
 }
 
 nav ul {
@@ -37,7 +41,7 @@ nav ul {
   display: flex;
   gap: 1.5em;
   padding: 0;
-  margin: 20px 20px;
+  margin: 0;
 }
 
 nav a {
@@ -48,6 +52,13 @@ nav a {
 
 nav a:hover {
   color: #00bcd4;
+}
+
+/* Logo */
+.logo img {
+  height: 70px; /* ajusta el valor que necesites */
+  width: auto;
+  display: block;
 }
 
 /* Hero */
@@ -101,19 +112,6 @@ footer {
   color: #fff;
   text-align: center;
   padding: 2em 0;
-}
-
-/* Responsive general */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .features .grid,
-  .pricing .grid {
-    flex-direction: column;
-  }
 }
 
 /* Templates Section */
@@ -184,23 +182,6 @@ footer {
   background-color: #0056b3;
 }
 
-/* Responsive tarjetas */
-@media (max-width: 900px) {
-  .templates .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 580px) {
-  .templates .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .template-card {
-    margin-bottom: 2em;
-  }
-}
-
 /* Modal */
 .modal {
   display: none;
@@ -264,10 +245,6 @@ footer {
 }
 
 /* Cookies banner */
-body {
-  font-family: 'Georgia', serif;
-}
-
 .cookie-banner {
   position: fixed;
   bottom: 0;
@@ -339,12 +316,6 @@ body {
   margin: 10px 0;
 }
 
-@media (max-width: 600px) {
-  .cookie-buttons {
-    flex-direction: column;
-  }
-}
-
 /* Títulos */
 h1 {
   font-size: 50px;
@@ -392,20 +363,12 @@ h1 {
   color: #555;
 }
 
-@media (max-width: 768px) {
-  .quienes-somos {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .quienes-somos .contenido {
-    padding: 20px 0;
-  }
-  .tech-tags {
-    font-size: 0.78rem;
-    color: #888;
-    margin: 4px 0 8px;
-    letter-spacing: 0.3px;
+/* Tech tags */
+.tech-tags {
+  font-size: 0.78rem;
+  color: #888;
+  margin: 4px 0 8px;
+  letter-spacing: 0.3px;
 }
 
 /* Hamburguesa */
@@ -439,7 +402,33 @@ h1 {
   transform: translateY(-8px) rotate(-45deg);
 }
 
+/* Responsive general */
+@media (max-width: 900px) {
+  .templates .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features .grid,
+  .pricing .grid {
+    flex-direction: column;
+  }
+
+  .quienes-somos {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .quienes-somos .contenido {
+    padding: 20px 0;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -450,7 +439,7 @@ h1 {
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: #111; /* ajusta al color de tu header */
+    background-color: #111;
     z-index: 999;
   }
 
@@ -466,7 +455,22 @@ h1 {
   #nav-menu ul li {
     text-align: center;
     padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
+
+@media (max-width: 600px) {
+  .cookie-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 580px) {
+  .templates .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .template-card {
+    margin-bottom: 2em;
+  }
 }
