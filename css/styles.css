@@ -22,7 +22,7 @@ h4 {
 
 /* Header */
 header {
-  background-color: #bbbdce;
+  background: linear-gradient(135deg, #378add 0%, #3d4247 60%, #378add 100%);
   color: #fff;
   width: 100%;
   position: relative;
@@ -32,31 +32,53 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.8em 2em;
- 
+  padding: 0 2em;
+  height: 68px;
+}
+
+.header-accent {
+  height: 2px;
+  background: linear-gradient(to right, #185fa5, #378add, #5dcaa5);
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5em;
+  align-items: center;
+  gap: 4px;
   padding: 0;
   margin: 0;
 }
 
 nav a {
-  color: #fff;
+  color: #b5d4f4;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 13.5px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: background 0.18s, color 0.18s;
 }
 
 nav a:hover {
-  color: #00bcd4;
+  background: rgba(55, 138, 221, 0.18);
+  color: #fff;
+}
+
+nav a.nav-cta {
+  background: #185fa5;
+  color: #fff;
+  border: 0.5px solid #378add;
+  margin-left: 6px;
+}
+
+nav a.nav-cta:hover {
+  background: #378add;
 }
 
 /* Logo */
 .logo img {
-  height: 70px; /* ajusta el valor que necesites */
+  height: 100px; /* ajusta el valor que necesites */
   width: auto;
   display: block;
 }
@@ -235,14 +257,124 @@ footer {
 .close:hover {
   color: #000;
 }
-
+/* Banner */
 .banner {
-  background: linear-gradient(to right, #21d1d1, #5f062b);
-  color: white;
-  text-align: center;
-  padding: 2em;
-  animation: pulse 3s infinite;
+  background: linear-gradient(135deg, #172431 0%, #3d4247 60%, #378add 100%);
+  color: #fff;
+  padding: 3rem 2rem 2.5rem;
+  border-radius: 0; /* o 16px si va dentro de un contenedor */
+  position: relative;
+  overflow: hidden;
 }
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: -40px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.banner-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.15);
+  border: 0.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 4px 14px;
+  margin-bottom: 1.2rem;
+  color: #b5d4f4;
+}
+
+.banner h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  color: #fff;
+  text-shadow: none; /* anula el text-shadow global de h1 */
+  max-width: 560px;
+}
+
+.banner p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #b5d4f4;
+  max-width: 500px;
+  margin: 0 0 2rem;
+}
+
+.banner-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.banner-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  transition: background 0.2s;
+}
+
+.banner-card:hover {
+  background: rgba(255, 255, 255, 0.17);
+}
+
+.banner-card h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0.5rem 0 4px;
+}
+
+.banner-card p {
+  font-size: 12px;
+  color: #85b7eb;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.banner .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1.8rem;
+  background: #fff;
+  color: #185fa5;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.banner .btn:hover {
+  background-color: #e0e9f7;
+}
+
+/* Quita la animación pulse del banner */
+/* animation: pulse 3s infinite; ← eliminado */
 
 /* Cookies banner */
 .cookie-banner {
