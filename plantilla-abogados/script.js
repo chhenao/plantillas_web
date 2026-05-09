@@ -42,25 +42,13 @@ faqItems.forEach(item => {
 });
 
 // Menú hamburguesa
-function toggleMenu() {
-  const navLinks = document.getElementById('navLinks');
-  const hamburger = document.querySelector('.hamburger');
-  const closeMenuIcon = document.querySelector('.close-menu');
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
 
-  navLinks.classList.add('active');
-  hamburger.style.display = 'none';
-  closeMenuIcon.style.display = 'block';
-}
-
-function closeMenu() {
-  const navLinks = document.getElementById('navLinks');
-  const hamburger = document.querySelector('.hamburger');
-  const closeMenuIcon = document.querySelector('.close-menu');
-
-  navLinks.classList.remove('active');
-  hamburger.style.display = 'block';
-  closeMenuIcon.style.display = 'none';
-}
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
 
 // Cerrar menú al pulsar un enlace
 document.querySelectorAll('.nav-links a').forEach(link => {
