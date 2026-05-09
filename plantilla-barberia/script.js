@@ -1,3 +1,6 @@
+// Efecto de bienvenida
+console.log("Bienvenido a Barbería Carlos 💈");
+
 // Cookies
 function aceptarCookies() {
   document.getElementById('cookie-banner').style.display = 'none';
@@ -27,10 +30,10 @@ window.onload = function () {
   }
 
   // Contadores
-  animateValue("herencias", 0, 350, 1500);
-  animateValue("testamentos", 0, 150, 1500);
-  animateValue("impugnacion", 0, 65, 1500);
-  animateValue("liquidacion", 0, 400, 1500);
+  animateValue("peinados", 0, 350, 1500);
+  animateValue("afeitados", 0, 150, 1500);
+  animateValue("estilización", 0, 65, 1500);
+  animateValue("barberia", 0, 400, 1500);
 };
 
 // FAQ acordeón
@@ -43,28 +46,20 @@ faqItems.forEach(item => {
 
 // Menú hamburguesa
 function toggleMenu() {
-  const navLinks = document.getElementById('navLinks');
-  const hamburger = document.querySelector('.hamburger');
-  const closeMenuIcon = document.querySelector('.close-menu');
-
-  navLinks.classList.add('active');
-  hamburger.style.display = 'none';
-  closeMenuIcon.style.display = 'block';
+  const nav = document.getElementById('navLinks');
+  nav.classList.toggle('active');
 }
 
-function closeMenu() {
-  const navLinks = document.getElementById('navLinks');
-  const hamburger = document.querySelector('.hamburger');
-  const closeMenuIcon = document.querySelector('.close-menu');
+const hamburger = document.getElementById('hamburger');
+const menu = document.getElementById('menu');
+const closeBtn = document.getElementById('closeBtn');
 
-  navLinks.classList.remove('active');
-  hamburger.style.display = 'block';
-  closeMenuIcon.style.display = 'none';
-}
+hamburger.addEventListener('click', () => {
+  menu.classList.add('active');
+  closeBtn.classList.add('active');
+});
 
-// Cerrar menú al pulsar un enlace
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    closeMenu();
-  });
+closeBtn.addEventListener('click', () => {
+  menu.classList.remove('active');
+  closeBtn.classList.remove('active');
 });
