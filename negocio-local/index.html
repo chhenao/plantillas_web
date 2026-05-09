@@ -30,6 +30,8 @@
     <a href="#contacto">Contacto</a>
     <a href="#trabajos">Trabajos</a>
     <a href="#sobre"></a>
+     <a class="btn btn-primary" href="https://payhip.com/b/0ipCE" target="_blank"
+              rel="noopener noreferrer">Comprar plantilla</a>
   </nav>
 
 </header>
@@ -147,6 +149,7 @@ const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 
 hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
   navMenu.classList.toggle('active');
 });
 
