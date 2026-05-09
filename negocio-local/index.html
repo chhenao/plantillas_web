@@ -7,18 +7,31 @@
 
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/boton.css">
+<link rel="stylesheet" href="css/boton-hamburguesa.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
 <header>
+
   <h1>Mi Negocio</h1>
-  <nav>
-    <a href="#">Inicio</a>
-    <a href="#">Servicios</a>
-    <a href="#">Contacto</a>
+
+  <!-- BOTÓN HAMBURGUESA -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="nav-menu">
+
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#trabajos">Trabajos</a>
+    <a href="#sobre"></a>
   </nav>
+
 </header>
 
 <section class="hero">
@@ -28,7 +41,7 @@
 </section>
 
 <section class="services">
-  <h2>Servicios</h2>
+  <h2 id="servicios">Servicios</h2>
 
   <div class="service-box">
     <img src="https://picsum.photos/400/200?1">
@@ -58,14 +71,14 @@
 <section class="about">
   <img src="https://picsum.photos/500/300">
   <div class="about-text">
-    <h2>Sobre Nosotros</h2>
+    <h2 id="sobre">Sobre Nosotros</h2>
     <p>Somos expertos ayudando a negocios a crecer y atraer más clientes.</p>
     <p>Ofrecemos soluciones modernas y efectivas.</p>
   </div>
 </section>
 
 <section class="gallery">
-  <h2>Trabajos</h2>
+  <h2 id="trabajos">Trabajos</h2>
   <img src="https://picsum.photos/300/200?4">
   <img src="https://picsum.photos/300/200?5">
   <img src="https://picsum.photos/300/200?6">
@@ -80,7 +93,7 @@
   <div class="contact-container">
 
     <div class="contact-info">
-      <h2>Contacto</h2>
+      <h2 id="contacto">Contacto</h2>
       <p>📍 Valencia, España</p>
       <p>📞 123 456 789</p>
       <p>📧 info@negocio.com</p>
@@ -128,6 +141,15 @@
     <path fill="#fff" d="M24 10C16.27 10 10 16.27 10 24c0 2.49.67 4.84 1.84 6.86L10 38l7.37-1.81A13.93 13.93 0 0 0 24 38c7.73 0 14-6.27 14-14S31.73 10 24 10zm6.9 19.1c-.29.82-1.7 1.57-2.33 1.63-.6.06-1.16.27-3.9-.81-3.27-1.28-5.37-4.62-5.53-4.84-.16-.22-1.3-1.73-1.3-3.3s.82-2.34 1.12-2.66c.29-.32.63-.4.84-.4l.6.01c.19 0 .45-.07.7.54.26.63.88 2.15.96 2.31.08.16.13.34.03.55-.1.21-.16.34-.31.52-.16.18-.33.4-.47.54-.16.16-.32.33-.14.65.18.32.82 1.35 1.76 2.19 1.21 1.08 2.23 1.41 2.55 1.57.32.16.5.13.69-.08.18-.21.79-.92 1-1.24.21-.32.42-.27.7-.16.29.1 1.83.86 2.14 1.02.32.16.53.24.61.37.08.14.08.78-.21 1.6z"/>
   </svg>
 </a>
+<script>
 
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+
+</script>
 </body>
 </html>
