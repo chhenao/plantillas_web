@@ -1,0 +1,289 @@
+/* =========================
+RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f8f5f2;
+  color:#222;
+  overflow-x:hidden;
+}
+
+/* =========================
+NAVBAR PREMIUM
+========================= */
+
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:18px 7%;
+  background:rgba(20,20,20,0.92);
+  backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:999;
+}
+
+.logo{
+  color:#fff;
+  font-size:1.7rem;
+  font-weight:700;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#c8a27a;
+}
+
+/* =========================
+BOTONES
+========================= */
+
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  border-radius:50px;
+  text-decoration:none;
+  transition:0.3s;
+  font-weight:600;
+}
+
+.btn-primary{
+  background:#c8a27a;
+  color:#fff !important;
+}
+
+.btn-primary:hover{
+  background:#b48e66;
+  transform:translateY(-2px);
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+  height:100vh;
+  background:
+  linear-gradient(rgba(0,0,0,0.55),
+  rgba(0,0,0,0.55)),
+  url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1400&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  color:#fff;
+}
+
+.hero h1{
+  font-size:4rem;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:1.3rem;
+  margin-bottom:30px;
+}
+
+.hero .btn{
+  background:#c8a27a;
+  color:#fff;
+}
+
+.hero .btn:hover{
+  background:#fff;
+  color:#222;
+}
+
+/* =========================
+SECCIONES
+========================= */
+
+section{
+  padding:100px 7%;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.feature{
+  background:#fff;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:0.3s;
+  text-align:center;
+}
+
+.feature:hover{
+  transform:translateY(-8px);
+}
+
+.feature h3{
+  margin-bottom:15px;
+}
+
+/* =========================
+MENU
+========================= */
+
+.menu{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+
+.menu-item{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.menu-item:hover{
+  transform:translateY(-8px);
+}
+
+.menu-item img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+}
+
+.menu-item div{
+  padding:25px;
+}
+
+/* =========================
+CTA
+========================= */
+
+.cta{
+  background:#1d1d1d;
+  color:#fff;
+  padding:70px 40px;
+  border-radius:30px;
+  text-align:center;
+}
+
+.cta h2{
+  font-size:2.5rem;
+  margin-bottom:15px;
+}
+
+.cta p{
+  margin-bottom:25px;
+}
+
+/* =========================
+CONTACTO
+========================= */
+
+.contact{
+  text-align:center;
+}
+
+/* =========================
+HAMBURGUESA
+========================= */
+
+.hamburger{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+  gap:6px;
+}
+
+.hamburger span{
+  width:28px;
+  height:3px;
+  background:#fff;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+/* =========================
+ANIMACIÓN X HAMBURGUESA
+========================= */
+
+.hamburger.active span:nth-child(1){
+  transform:rotate(45deg) translate(7px, 6px);
+}
+
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+  transform:rotate(-45deg) translate(7px, -6px);
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  .hamburger{
+    display:flex;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:100%;
+    right:-100%;
+    width:280px;
+    height:100vh;
+    background:#111;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:50px 30px;
+    transition:0.4s;
+    gap:25px;
+  }
+
+  .nav-links.active{
+    right:0;
+  }
+
+  .hero h1{
+    font-size:2.5rem;
+  }
+
+  .hero p{
+    font-size:1rem;
+  }
+
+}

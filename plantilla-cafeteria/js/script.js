@@ -1,39 +1,54 @@
-// Navbar scroll
-window.addEventListener("scroll",()=>{
-  document.getElementById("nav")
-  .classList.toggle("scrolled",window.scrollY>50);
+// =========================
+// MENÚ HAMBURGUESA
+// =========================
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+
+  navLinks.classList.toggle('active');
+
+  // convierte hamburguesa en X
+  hamburger.classList.toggle('active');
+
 });
 
-// Animaciones
-const fades=document.querySelectorAll(".fade");
 
-window.addEventListener("scroll",()=>{
-  fades.forEach(el=>{
-    const top=el.getBoundingClientRect().top;
-    if(top<window.innerHeight-100){
-      el.classList.add("show");
-    }
+// =========================
+// CERRAR MENÚ AL HACER CLICK
+// =========================
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+
+  link.addEventListener('click', () => {
+
+    navLinks.classList.remove('active');
+    hamburger.classList.remove('active');
+
   });
+
 });
 
-/* banner cookies */
-// Mostrar banner solo si no hay consentimiento
-window.addEventListener("load", () => {
-  const banner = document.getElementById("cookieBanner");
 
-  if (localStorage.getItem("cookiesAccepted")) {
-    banner.style.display = "none";
-  }
+// =========================
+// COOKIES
+// =========================
+
+const cookieBanner = document.getElementById("cookieBanner");
+const acceptBtn = document.getElementById("acceptCookies");
+const rejectBtn = document.getElementById("rejectCookies");
+
+if (!localStorage.getItem("cookiesChoice")) {
+  cookieBanner.style.display = "block";
+}
+
+acceptBtn.addEventListener("click", () => {
+  localStorage.setItem("cookiesChoice", "accepted");
+  cookieBanner.style.display = "none";
 });
 
-// Aceptar cookies
-document.getElementById("acceptCookies").addEventListener("click", () => {
-  localStorage.setItem("cookiesAccepted", "true");
-  document.getElementById("cookieBanner").style.display = "none";
-});
-
-// Rechazar cookies
-document.getElementById("rejectCookies").addEventListener("click", () => {
-  localStorage.setItem("cookiesAccepted", "false");
-  document.getElementById("cookieBanner").style.display = "none";
+rejectBtn.addEventListener("click", () => {
+  localStorage.setItem("cookiesChoice", "rejected");
+  cookieBanner.style.display = "none";
 });
