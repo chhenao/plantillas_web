@@ -21,26 +21,15 @@ function animateValue(id, start, end, duration) {
 
 // Un solo window.onload
 window.onload = function () {
-  // Cookies
+  const banner = document.getElementById('cookie-banner');
   if (localStorage.getItem('cookiesAceptadas') === 'true') {
-    document.getElementById('cookie-banner').style.display = 'none';
+    banner.style.display = 'none';
+  } else {
+    banner.style.display = 'block';
   }
-
-  // Contadores - cámbia los ids por los que tenga fisio
-  animateValue("herencias", 0, 350, 1500);
-  animateValue("testamentos", 0, 150, 1500);
-  animateValue("impugnacion", 0, 65, 1500);
-  animateValue("liquidacion", 0, 400, 1500);
 };
 
 // FAQ acordeón
-const faqItems = document.querySelectorAll('.faq-item');
-faqItems.forEach(item => {
-  item.addEventListener('click', () => {
-    item.classList.toggle('active');
-  });
-});
-
 document.querySelectorAll('.faq-question').forEach(button => {
   button.addEventListener('click', () => {
     const item = button.parentElement;
@@ -49,17 +38,18 @@ document.querySelectorAll('.faq-question').forEach(button => {
 });
 
 // Menú hamburguesa
-function toggleMenu() {
-  const nav = document.getElementById('navLinks');
-  nav.classList.toggle('active');
-}
+const hamburger = document.getElementById('hamburger');
+const menu = document.getElementById('menu');
 
-const toggleBtn = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  menu.classList.toggle('open');
+});
 
-if (toggleBtn) {
-  toggleBtn.addEventListener('click', () => {
-    toggleBtn.classList.toggle('active');
-    navLinks.classList.toggle('show');
+// Cierra el menú al hacer clic en un enlace
+menu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    menu.classList.remove('open');
   });
-}
+});

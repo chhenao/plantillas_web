@@ -1,134 +1,139 @@
-/* Reset básico */
+/* =========================
+RESET GENERAL
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f7fa;
+  background: #f4f7fa;
   color: #333;
   line-height: 1.6;
+  overflow-x: hidden; 
+  
 }
 
-/* Encabezado y navegación */
-/* Estilos base */
+/* =========================
+NAVBAR
+========================= */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #fff;
-  position: relative;
-  z-index: 10;
+  box-sizing: border-box;
 }
 
 .logo img {
-  height: 70px;
+  height: 60px;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 25px;
+  list-style: none;
+  align-items: center;
 }
 
-.nav-links li a {
+.nav-links a {
   text-decoration: none;
-   
+  color: #fff;
   font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #009688;
 }
 
 .btn-primary {
-  background-color: #007bff;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-/* Botón hamburguesa */
-.menu-toggle {
-   display: none;
-  background: none;
+  background: #009688 !important;
   border: none;
-  cursor: pointer;
-  z-index: 1001;
-
+  padding: 10px 18px;
+  border-radius: 50px;
+  color: #fff !important;
+  font-weight: 600;
 }
 
+/* HAMBURGUESA */
 .hamburger {
-  width: 40px;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger span {
+  width: 28px;
   height: 3px;
-  background-color: #333;
-  position: relative;
-  transition: all 0.3s ease-in-out;
+  background: white;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
-.hamburger::before,
-.hamburger::after {
-  content: '';
-  position: absolute;
-  width: 30px;
-  height: 3px;
-  background-color: #333;
-  transition: all 0.3s ease-in-out;
+/* ANIMACIÓN X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
 }
 
-.hamburger::before {
-  top: -10px;
-}
-.hamburger::after {
-  top: 10px;
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
 }
 
-/* Animación para convertir en "X" al abrir */
-.menu-toggle.active .hamburger {
-  background-color: transparent;
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
-.menu-toggle.active .hamburger::before {
-  transform: rotate(45deg);
-  top: 0;
-}
+/* MOBILE MENU */
+@media (max-width: 991px) {
 
-.menu-toggle.active .hamburger::after {
-  transform: rotate(-45deg);
-  top: 0;
-}
-
-
-/* Responsive */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+  .hamburger {
+    display: flex; 
+    
+    margin-right: -10 px;
   }
 
   .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #fff;
+    position: fixed;
+    top: -250px;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #111;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    display: none;
-    padding: 1rem 0;
+    gap: 20px;
+    transition: 0.4s ease;
   }
 
-  .nav-links.show {
-    display: flex;
+  .nav-links.open {
+    right: 0;
   }
 }
-/*******end nav********/
 
-/* header */
- 
+/* =========================
+HERO
+========================= */
 header {
   position: relative;
-  width: 100%;
   height: 100vh;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -146,445 +151,292 @@ header img {
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  padding: 1rem;
 }
 
 .hero-text h2 {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
 }
 
 .hero-text p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  margin: 10px 0;
 }
 
 .cta-button {
-  background-color: #007bff;
+  background: #009688;
   color: white;
-  padding: 0.75rem 1.5rem;
+  padding: 12px 25px;
   border-radius: 5px;
   text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
-  background-color: #0056b3;
-}
-
-/* Responsive ajustes */
-@media (max-width: 768px) {
-  .hero-text h2 {
-    font-size: 1.8rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-  }
-
-  .cta-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-
-.bonos {
-  background-color: #f9f9f9;
-  padding: 60px 30px;
+/* =========================
+BARRA SERVICIOS
+========================= */
+.barra-servicios {
+  background: #e0f7f7;
   text-align: center;
+  padding: 10px;
 }
 
-.bonos h2 {
-  font-size: 2.2rem;
-  color: #005baa;
-  margin-bottom: 40px;
+.barra-servicios a {
+  color: #009688;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+/* =========================
+BONOS
+========================= */
+.bonos {
+  padding: 60px 20px;
+  text-align: center;
 }
 
 .bono-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .bono-card {
-  background-color: #ffffff;
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
-  padding: 25px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
-
-.bono-card:hover {
-  transform: translateY(-5px);
-}
-
-.bono-card h3 {
-  color: #0077cc;
-  margin-bottom: 10px;
-}
-
-.bono-card p {
-  font-size: 1rem;
-  color: #333;
-  margin: 5px 0;
-}
-
-.bono-card button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #0077cc;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
 }
 
 .bono-card.destacado {
-  border-color: #0077cc;
-  background-color: #e6f2ff;
+  border: 2px solid #009688;
 }
 
-.barra-servicios {
-  background-color: #e0f7f7;
-  padding: 10px;
-  text-align: center;
-}
-
-.barra-servicios nav a {
-  color: #009688;
-  text-decoration: none;
-  margin: 0 30px;
-  font-weight: 500;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.barra-servicios nav span {
-  color: #009688;
-}
-
-/* quienes-somos */
+/* =========================
+QUIENES SOMOS
+========================= */
 .quienes-somos {
-  padding: 40px 20px;
-  background-color: #f5f5f5;
+  padding: 60px 20px;
+  background: #f5f5f5;
 }
-
 .contenido {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  gap: 40px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
 }
 
-.imagen {
-  flex: 1 1 300px;
-  padding: 10px;
+.contenido .imagen {
+  flex: 1 1 400px;
 }
 
+.contenido .texto {
+  flex: 1 1 400px;
+}
 .imagen img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-.texto {
-  flex: 1 1 400px;
-  padding: 10px;
-}
-
-.texto h2 {
-  color: #009688;
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-.texto p {
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .contenido {
-    flex-direction: column;
-  }
-
-  .texto h2 {
-    text-align: center;
-  }
-
-  .texto p {
-    text-align: justify;
-  }
-}
-/* Equipo section */
-/* Sección principal */
+/* =========================
+EQUIPO
+========================= */
 .equipo-fisiovida {
-  background: url('fondo-fisiovida.jpg') center center / cover no-repeat;
   padding: 60px 20px;
   text-align: center;
-  color: #fff;
+  background: #fff;
 }
 
-/* Título */
-.equipo-fisiovida h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #ffffff;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
-
-/* Contenedor de tarjetas */
 .tarjetas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-/* Tarjeta individual */
 .tarjeta {
-  background-color: rgba(255, 255, 255, 0.95);
+  background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.tarjeta:hover {
-  transform: translateY(-5px);
-}
-
-/* Imagen de perfil */
 .tarjeta img {
   width: 100%;
-  height: auto;
-  display: block;
 }
 
-/* Información del profesional */
-.info {
-  padding: 20px;
-  color: #333;
-  text-align: left;
-}
-
-.info h3 {
-  color: #009688;
-  margin-bottom: 10px;
-  font-size: 1.2em;
-}
-
-.info p {
-  margin: 5px 0;
-  font-size: 0.95em;
-}
-
-.info .registro {
-  font-size: 0.9em;
-  color: #00796b;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-/* Responsive extra para pantallas pequeñas */
-@media (max-width: 480px) {
-  .equipo-fisiovida h2 {
-    font-size: 1.8em;
-  }
-
-  .info {
-    padding: 15px;
-  }
-
-  .info h3 {
-    font-size: 1em;
-  }
-
-  .info p {
-    font-size: 0.85em;
-  }
-}
-
-/* Nuestrso servicio */
-
-.servicios-fisiovida {
-  padding: 60px 20px;
-  background-color: #f4f4f4;
-  text-align: center;
-}
-
-.servicios-fisiovida h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #009688;
-}
-
+/* =========================
+SERVICIOS
+========================= */
 .grid-servicios {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .servicio {
-  background-color: #fff;
+  background: #fff;
+  padding: 15px;
   border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.servicio:hover {
-  transform: translateY(-5px);
-}
-
-.servicio img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.servicio h3 {
-  margin: 20px 0 10px;
-  color: #00796b;
-  font-size: 1.4em;
-}
-
-.servicio p {
-  padding: 0 15px 20px;
-  font-size: 0.95em;
-  color: #555;
-}
-
-/* preguntas frecuentes */
+/* =========================
+FAQ
+========================= */
 .faq-fisiovida {
   max-width: 800px;
-  margin: 60px auto;
-  padding: 0 20px;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.faq-fisiovida h2 {
-  text-align: center;
-  font-size: 2.5em;
-  color: #009688;
-  margin-bottom: 40px;
-}
-
-.faq-item {
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ddd;
+  margin: auto;
+  padding: 60px 20px;
 }
 
 .faq-question {
   width: 100%;
-  background: none;
-  border: none;
-  font-size: 1.2em;
   text-align: left;
   padding: 15px;
+  border: none;
+  background: #504d4d;
   cursor: pointer;
-  color: #00796b;
-  transition: background 0.3s ease;
-}
-
-.faq-question:hover {
-  background-color: #f0f0f0;
 }
 
 .faq-answer {
   display: none;
-  padding: 0 15px 15px;
-  color: #555;
-  font-size: 1em;
+  padding: 10px;
 }
 
 .faq-item.active .faq-answer {
   display: block;
 }
 
-/* footer */
+/* =========================
+FOOTER
+========================= */
+/* =========================
+FOOTER
+========================= */
 .footer-fisiovida {
-  background-color: #323838;
+  background: #323838;
   color: white;
-  padding: 40px 20px;
-  font-family: 'Segoe UI', sans-serif;
+  padding: 40px 20px 20px;
 }
 
 .footer-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1000px;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.footer-left,
-.footer-right {
-  flex: 1 1 300px;
-  margin: 10px;
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .footer-logo {
-  max-width: 160px;
-  margin-bottom: 20px;
+  height: 50px;
+  width: auto;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
 }
 
 .footer-social a {
-  margin-right: 15px;
-  font-size: 1.8em;
   color: white;
-  transition: color 0.3s ease;
+  font-size: 1.3rem;
+  transition: color 0.3s;
 }
 
 .footer-social a:hover {
-  color: #e0f2f1;
+  color: #009688;
+}
+
+.footer-right {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .footer-right p {
-  margin: 10px 0;
-  font-size: 1em;
+  margin: 0;
+  line-height: 1.8;
+  font-size: 0.9rem;
 }
 
 .footer-right a {
-  color: white;
-  text-decoration: underline;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-right a:hover {
+  color: #009688;
 }
 
 .footer-bottom {
   text-align: center;
   margin-top: 30px;
-  font-size: 0.9em;
-  opacity: 0.8;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.8rem;
+  color: #aaa;
 }
 
-/* 💬 WhatsApp Button */
- .whatsapp-float {
-   position: fixed;
-   bottom: 20px;
-   right: 20px;
-   width: 60px;
-   height: 60px;
-   background-color: #25D366;
-   border-radius: 50%;
-   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   z-index: 999;
-   transition: transform 0.3s;
- }
+@media (max-width: 768px) {
+  .footer-right {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
 
- .whatsapp-float:hover {
-   transform: scale(1.1);
- }
+/* =========================
+WHATSAPP
+========================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
- .whatsapp-float img {
-   width: 30px;
-   height: 30px;
- }
+/* =========================
+IMÁGENES CONTROLADAS
+========================= */
+
+/* Equipo */
+.tarjeta img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Servicios */
+.servicio img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Quiénes somos */
+.imagen img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Footer logo */
+.footer-logo {
+  height: 100px;
+  width: auto;
+}
