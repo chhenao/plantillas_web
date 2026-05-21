@@ -1,0 +1,498 @@
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN INICIAL (Paleta Premium)
+   ========================================================================== */
+:root {
+    --bg-dark: #0a0b0d;        /* Negro profundo y suave */
+    --bg-card: #121418;        /* Negro/Gris premium para tarjetas */
+    --gold: #d4af37;           /* Oro clásico */
+    --gold-light: #f3e5ab;     /* Oro suave/arena para contrastes */
+    --text-light: #f5f5f7;     /* Blanco roto (estilo Apple) */
+    --text-muted: #8e8e93;     /* Gris para descripciones secundarias */
+    --navbar-height: 80px;
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Animaciones fluidas */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+/* ==========================================================================
+   2. HEADER & NAVEGACIÓN
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--navbar-height);
+    background-color: rgba(10, 11, 13, 0.85);
+    backdrop-filter: blur(20px); /* Efecto cristal esmerilado */
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: var(--text-light);
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    color: var(--gold);
+}
+
+/* Botón "Agendar Consulta" en el menú */
+.btn-nav {
+    border: 1px solid var(--gold);
+    padding: 0.6rem 1.3rem;
+    border-radius: 2px;
+    color: var(--gold) !important;
+}
+
+.btn-nav:hover {
+    background-color: var(--gold);
+    color: var(--bg-dark) !important;
+}
+
+/* ==========================================================================
+   3. SECCIÓN HERO (Inicio)
+   ========================================================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+    padding-top: var(--navbar-height);
+    position: relative;
+    /* Sutil gradiente de fondo simulando iluminación ambiental de estudio */
+    background: radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(18, 20, 24, 1) 0%, var(--bg-dark) 100%);
+}
+
+.hero-container {
+    max-width: 800px;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--gold);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+    background-color: rgba(212, 175, 55, 0.05);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Botones Principales */
+.btn-primary, .btn-secondary {
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 2px;
+}
+
+.btn-primary {
+    background-color: var(--gold);
+    color: var(--bg-dark);
+}
+
+.btn-primary:hover {
+    background-color: var(--gold-light);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+}
+
+.btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   4. SECCIÓN SERVICIOS (Grid Mínimo y Elegante)
+   ========================================================================== */
+.services {
+    padding: 8rem 10%;
+    background-color: var(--bg-dark);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+}
+
+.section-title p {
+    color: var(--gold);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.service-card {
+    background-color: var(--bg-card);
+    padding: 3.5rem 2.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: var(--transition);
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-card .icon {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    display: inline-block;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: -0.3px;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   5. SECCIÓN CONTACTO (Formulario Minimalista Premium)
+   ========================================================================== */
+.contact {
+    padding: 8rem 10%;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, #0d0f12 100%);
+    display: flex;
+    justify-content: center;
+}
+
+.contact-box {
+    background-color: var(--bg-card);
+    max-width: 650px;
+    width: 100%;
+    padding: 4rem 3.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    text-align: center;
+}
+
+.contact-box h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.contact-box p {
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    font-size: 1rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; /* Espaciado amplio y limpio */
+}
+
+/* Efecto de Floating Labels Premium */
+.form-group {
+    position: relative;
+    text-align: left;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.8rem 0;
+    color: var(--text-light);
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.form-group label {
+    position: absolute;
+    top: 0.8rem;
+    left: 0;
+    color: var(--text-muted);
+    pointer-events: none;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+/* Animación al hacer focus o escribir */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: var(--gold);
+}
+
+.form-group input:focus ~ label,
+.form-group input:not(:placeholder-shown) ~ label,
+.form-group textarea:focus ~ label,
+.form-group textarea:not(:placeholder-shown) ~ label {
+    top: -1.2rem;
+    font-size: 0.8rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+.btn-submit {
+    background-color: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 1rem;
+}
+
+.btn-submit:hover {
+    background-color: var(--gold);
+    color: var(--bg-dark);
+}
+
+/* ==========================================================================
+   6. BOTÓN FLOTANTE WHATSAPP PREMIUM
+   ========================================================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #121418; /* Reemplazamos el verde chillón por negro premium */
+    color: #25d366; /* El verde solo queda en el icono */
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    transition: var(--transition);
+}
+
+.whatsapp-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.whatsapp-text {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-4px);
+    border-color: #25d366;
+    background-color: #1a1e24;
+}
+
+/* ==========================================================================
+   7. FOOTER CORPORATIVO
+   ========================================================================== */
+.premium-footer {
+    background-color: #060708;
+    padding: 5rem 10% 2rem 10%;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-brand .logo {
+    margin-bottom: 1.5rem;
+}
+
+.footer-brand p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.footer-links-group {
+    display: flex;
+    gap: 6rem;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-col h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.footer-col a {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.footer-col a:hover {
+    color: var(--text-light);
+    transform: translateX(3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    padding-top: 2rem;
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE DESIGN (Adaptabilidad Móvil)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .navbar { padding: 0 5%; }
+    .hero { padding: 0 5%; }
+    .hero h1 { font-size: 2.8rem; }
+    .services { padding: 6rem 5%; }
+    .contact { padding: 6rem 5%; }
+    .premium-footer { padding: 4rem 5% 2rem 5%; }
+    .footer-links-group { gap: 3rem; }
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* En producción requerirá menú de hamburguesa */
+    .hero h1 { font-size: 2.3rem; }
+    .hero p { font-size: 1.1rem; }
+    .hero-actions { flex-direction: column; gap: 1rem; }
+    .contact-box { padding: 3rem 1.5rem; }
+    .footer-container { flex-direction: column; gap: 3rem; }
+    .footer-links-group { justify-content: space-between; width: 100%; }
+    .whatsapp-float { bottom: 20px; right: 20px; padding: 0.7rem 1.2rem; }
+}
