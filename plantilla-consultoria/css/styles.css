@@ -1,0 +1,347 @@
+/* ==========================================================================
+   0. VARIABLES GLOBALES (FÁCIL PERSONALIZACIÓN)
+   ========================================================================== */
+:root {
+    --primary-color: #236d1c;       /* Color de énfasis (Azul corporativo) */
+    --primary-hover: #0041a3;       /* Color al pasar el cursor */
+    --text-main: #1e293b;           /* Gris oscuro para títulos principales */
+    --text-muted: #64748b;          /* Gris para descripciones */
+    --bg-light: #f8fafc;            /* Fondo de bloques secundarios */
+    --bg-white: #ffffff;            /* Fondo blanco puro */
+    --border-color: #e2e8f0;        /* Líneas divisorias */
+    --gold: #b38f1d;                /* Dorado pulido de contraste legal */
+    
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --navbar-height: 80px;
+    --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-family: var(--font-sans); color: var(--text-main); background-color: var(--bg-white); }
+body { line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+
+/* ==========================================================================
+   1. NAVBAR
+   ========================================================================== */
+.main-navbar {
+    position: fixed; top: 0; left: 0; width: 100%; height: var(--navbar-height);
+    background-color: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color); z-index: 100; display: flex; align-items: center;
+}
+.nav-container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-weight: 800; letter-spacing: -0.5px; font-size: 1.3rem; color: var(--text-main); }
+.nav-logo span { color: var(--primary-color); }
+.nav-menu { display: flex; gap: 2.5rem; }
+.nav-link { font-size: 0.95rem; font-weight: 500; color: var(--text-muted); transition: var(--transition); }
+.nav-link:hover { color: var(--primary-color); }
+.btn-primary-sm { background-color: var(--primary-color); color: var(--bg-white); padding: 0.6rem 1.2rem; font-size: 0.9rem; font-weight: 600; border-radius: 6px; transition: var(--transition); }
+.btn-primary-sm:hover { background-color: var(--primary-hover); }
+
+/* ==========================================================================
+   2. HERO
+   ========================================================================== */
+.hero-section { padding-top: calc(var(--navbar-height) + 4rem); padding-bottom: 5rem; background: radial-gradient(100% 100% at 50% 0%, rgba(0, 82, 204, 0.04) 0%, rgba(255, 255, 255, 0) 100%); }
+.hero-container { width: 90%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.hero-tag { display: inline-block; background-color: rgba(0, 82, 204, 0.06); color: var(--primary-color); font-size: 0.8rem; font-weight: 600; padding: 0.4rem 1rem; border-radius: 50px; margin-bottom: 1.5rem; }
+.hero-content h1 { font-size: 3rem; font-weight: 800; line-height: 1.2; letter-spacing: -1px; color: var(--text-main); margin-bottom: 1.5rem; }
+.hero-lead { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+.hero-buttons { display: flex; gap: 1rem; margin-bottom: 2.5rem; }
+.btn-hero-primary { background-color: var(--primary-color); color: var(--bg-white); padding: 0.9rem 1.8rem; font-weight: 600; border-radius: 6px; transition: var(--transition); }
+.btn-hero-primary:hover { background-color: var(--primary-hover); }
+.btn-hero-secondary { background-color: transparent; color: var(--text-main); border: 1px solid var(--border-color); padding: 0.9rem 1.8rem; font-weight: 600; border-radius: 6px; transition: var(--transition); }
+.btn-hero-secondary:hover { background-color: var(--bg-light); }
+.hero-features-min { display: flex; gap: 2rem; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+.hero-image-placeholder { border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.06); }
+.hero-image-placeholder img { width: 100%; height: auto; display: block; }
+
+/* ==========================================================================
+   4.B SECCIÓN QUIÉNES SOMOS (Estilo Editorial)
+   ========================================================================== */
+.border-top { border-top: 1px solid var(--border-color); }
+
+.about-wrapper {
+    display: grid;
+    grid-template-columns: 45% 50%;
+    gap: 5%;
+    align-items: center;
+}
+
+/* Contenedor de Imagen con marco y Badge flotante */
+.about-image-container {
+    position: relative;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.about-image-frame {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+.about-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(10%) contrast(105%);
+}
+
+/* Badge de años de experiencia estilo Premium */
+.about-experience-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--text-main);
+    color: var(--bg-white);
+    padding: 1.5rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.exp-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--bg-white);
+    line-height: 1;
+}
+
+.exp-text {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    color: #94a3b8;
+}
+
+/* Contenido de Texto */
+.about-subtitle {
+    display: inline-block;
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.about-content h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+}
+
+.about-lead {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Grid de Valores internos */
+.about-values-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+.value-item {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.value-item::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.value-item strong {
+    color: var(--text-main);
+}
+
+/* Ajuste Adaptable (Media Query) */
+@media (max-width: 992px) {
+    .about-wrapper {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    .about-image-container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding-right: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+/* ==========================================================================
+   3. TRUST BAR, MAQUETACIÓN GENERAL Y COMPONENTES
+   ========================================================================== */
+.trust-bar { border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1.5rem 0; background-color: var(--bg-light); text-align: center; }
+.trust-container p { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); font-weight: 600; }
+.section-padding { padding: 7rem 0; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.section-header { text-align: center; max-width: 600px; margin: 0 auto 4rem auto; }
+.section-header h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 1rem; }
+.section-header p { color: var(--text-muted); font-size: 1.05rem; }
+.bg-light { background-color: var(--bg-light); }
+
+/* Grid Servicios */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.service-card { background-color: var(--bg-white); padding: 3rem 2.5rem; border-radius: 8px; border: 1px solid var(--border-color); transition: var(--transition); box-shadow: var(--shadow-sm); }
+.service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--primary-color); }
+.service-icon { font-size: 0.85rem; font-weight: 700; color: var(--primary-color); background-color: rgba(0,82,204,0.06); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50px; margin-bottom: 1.5rem; }
+.service-card h3 { font-size: 1.3rem; margin-bottom: 1rem; }
+.service-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* Grid Testimonios */
+.testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.testimonial-card { background-color: var(--bg-white); padding: 2.5rem; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+.stars { color: #f59e0b; margin-bottom: 1rem; font-size: 1.1rem; }
+.testimonial-card p { font-style: italic; color: var(--text-main); font-size: 1.05rem; margin-bottom: 1.5rem; }
+.author strong { display: block; color: var(--text-main); font-size: 0.95rem; }
+.author span { color: var(--text-muted); font-size: 0.85rem; }
+
+/* Formulario Interactivo */
+.contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.contact-info h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 1.5rem; }
+.contact-info p { color: var(--text-muted); margin-bottom: 2.5rem; }
+.info-item { margin-bottom: 1rem; font-size: 1rem; }
+.contact-form-container { background-color: var(--bg-light); padding: 3.5rem; border-radius: 8px; border: 1px solid var(--border-color); }
+.interactive-form .form-group { position: relative; margin-bottom: 2rem; }
+.interactive-form input, .interactive-form textarea { width: 100%; padding: 1rem; background: var(--bg-white); border: 1px solid var(--border-color); border-radius: 6px; outline: none; font-size: 1rem; font-family: var(--font-sans); transition: var(--transition); }
+.interactive-form textarea { resize: none; }
+.interactive-form input:focus, .interactive-form textarea:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(0,82,204,0.1); }
+.interactive-form label { position: absolute; left: 1rem; top: 1rem; color: var(--text-muted); pointer-events: none; transition: var(--transition); background: transparent; }
+.interactive-form input:focus ~ label, .interactive-form input:not(:placeholder-shown) ~ label,
+.interactive-form textarea:focus ~ label, .interactive-form textarea:not(:placeholder-shown) ~ label { top: -0.6rem; left: 0.8rem; font-size: 0.75rem; background: var(--bg-white); padding: 0 0.4rem; color: var(--primary-color); font-weight: 600; }
+.btn-submit { width: 100%; background-color: var(--primary-color); color: var(--bg-white); border: none; padding: 1rem; font-size: 1rem; font-weight: 600; border-radius: 6px; cursor: pointer; transition: var(--transition); }
+.btn-submit:hover { background-color: var(--primary-hover); }
+
+/* Footer */
+.main-footer 
+{ background-color: #0f172a; color: #94a3b8; padding: 3rem 0; border-top: 1px solid var(--border-color); }
+
+.footer-container { width: 90%; 
+max-width: 1200px; margin: 0 auto; 
+display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; }
+
+.footer-links {
+     display: flex; gap: 2rem; }
+
+.footer-links a:hover { color: var(--bg-white); }
+
+/* ==========================================================================
+   8. COMPONENTES EXTRA (COOKIES Y WHATSAPP)
+   ========================================================================== */
+.cookie-banner { position: fixed; bottom: 24px; left: 24px; max-width: 450px; background-color: rgba(255,255,255,0.95); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; box-shadow: 0 20px 40px rgba(0,0,0,0.1); z-index: 1000; transition: var(--transition); backdrop-filter: blur(10px); }
+.cookie-banner.cookie-hidden { opacity: 0; transform: translateY(20px); pointer-events: none; }
+.cookie-content p { font-size: 0.85rem; color: var(--text-main); margin-bottom: 1rem; line-height: 1.5; }
+.cookie-content a { color: var(--primary-color); font-weight: 600; text-decoration: underline; }
+.btn-cookie-accept { background-color: var(--text-main); color: var(--bg-white); border: none; padding: 0.5rem 1.2rem; font-size: 0.85rem; font-weight: 600; border-radius: 4px; cursor: pointer; transition: var(--transition); }
+.btn-cookie-accept:hover { background-color: var(--primary-color); }
+
+.whatsapp-premium { position: fixed; bottom: 24px; right: 24px; background-color: #ffffff; border: 1px solid var(--border-color); padding: 0.8rem 1.5rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: var(--text-main); box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 0.6rem; z-index: 999; transition: var(--transition); }
+.whatsapp-premium:hover { transform: translateY(-3px); border-color: #25d366; }
+.wa-dot { width: 8px; height: 8px; background-color: #25d366; border-radius: 50px; display: inline-block; box-shadow: 0 0 0 4px rgba(37,211,102,0.2); }
+
+/* ==========================================================================
+   10. PÁGINAS LEGALES UNIFICADAS: FORMATO EDITORIAL CLARO CON MARGEN
+   ========================================================================== */
+.legal-page { background-color: #f8f9fa !important; display: block !important; opacity: 1 !important; }
+.legal-document-container { padding-top: calc(var(--navbar-height) + 4rem); padding-bottom: 6rem; display: flex; justify-content: center; padding-left: 5%; padding-right: 5%; background-color: #f8f9fa; }
+.legal-paper { background-color: #ffffff !important; border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 2px; max-width: 850px; width: 100%; padding: 5rem 4.5rem; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.03); display: block !important; }
+.legal-paper::before { content: ""; position: absolute; top: 24px; bottom: 24px; left: 24px; right: 24px; border: 1px solid rgba(10, 11, 13, 0.05); pointer-events: none; }
+.legal-paper-header { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 4rem; }
+.legal-paper-header .badge { background-color: transparent; border: 1px solid rgba(212, 175, 55, 0.5); font-size: 0.7rem; padding: 0.5rem 1.5rem; margin-bottom: 1.5rem; color: var(--gold); display: inline-block; text-transform: uppercase; letter-spacing: 4px; border-radius: 50px; }
+.legal-file-code { font-family: monospace; font-size: 0.75rem; color: var(--gold); letter-spacing: 3px; margin-bottom: 1rem; text-transform: uppercase; font-weight: 600; }
+.legal-paper-header h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: #1a1a1a !important; margin-bottom: 1rem; max-width: 600px; line-height: 1.3; }
+.legal-meta { font-size: 0.8rem; color: #666666; letter-spacing: 1px; text-transform: uppercase; }
+.legal-divider { border: none; border-top: 1px solid rgba(212, 175, 55, 0.3); margin: 2rem 0; }
+.legal-paper-body { padding: 0 1rem; }
+.legal-lead { font-size: 1.1rem; color: #222222; line-height: 1.8; text-align: center; margin-bottom: 3.5rem; }
+.legal-paper-body h4 { color: var(--gold); font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; margin: 3rem 0 1.2rem 0; font-weight: 700; display: flex; align-items: center; gap: 1rem; }
+.legal-paper-body h4::before { content: ""; display: inline-block; width: 20px; height: 2px; background-color: var(--gold); }
+.legal-paper-body p { color: #444444; font-size: 0.95rem; line-height: 1.9; margin-bottom: 1.5rem; text-align: justify; padding-left: 32px; }
+.legal-paper-body ul { list-style: none; padding-left: 32px; margin-bottom: 2rem; }
+.legal-paper-body li { color: #444444; font-size: 0.95rem; margin-bottom: 0.8rem; line-height: 1.7; position: relative; padding-left: 20px; }
+.legal-paper-body li::before { content: "—"; position: absolute; left: 0; color: var(--gold); font-weight: bold; }
+.legal-paper-body strong { color: #1a1a1a; font-weight: 700; }
+.legal-paper-footer { margin-top: 6rem; border-top: 1px solid rgba(0, 0, 0, 0.06); padding-top: 3rem; text-align: center; }
+.legal-paper-footer p { font-size: 0.8rem; color: #666666; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.5rem; }
+.legal-paper-footer a { font-size: 0.85rem; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px dashed var(--gold); padding-bottom: 3px; font-weight: 600; }
+.legal-paper-footer a:hover { color: #1a1a1a; border-bottom-color: #1a1a1a; }
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT
+   ========================================================================== */
+@media (max-width: 992px) {
+    .hero-container, .contact-wrapper { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .nav-menu { display: none; }
+}
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.2rem; }
+    .legal-paper { padding: 3rem 1.5rem; }
+    .legal-paper::before { top: 12px; bottom: 12px; left: 12px; right: 12px; }
+    .legal-paper-body p, .legal-paper-body ul { padding-left: 0; }
+    .legal-paper-body h4::before { display: none; }
+}
+
+/* ==========================================================================
+   BOTÓN ESTILO BOOTSTRAP 5 (NATIVO)
+   ========================================================================== */
+.btn-bootstrap-primary {
+    display: inline-block;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff !important;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: #0d6efd; /* Azul clásico de Bootstrap */
+    border: 1px solid #0d6efd;
+    padding: 0.375rem 0.75rem; /* Proporciones estándar de padding */
+    font-size: 1rem;
+    border-radius: 0.25rem; /* Radio sutil característico */
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+/* Efecto Hover */
+.btn-bootstrap-primary:hover {
+    color: #fff;
+    background-color: #0b5ed7; /* Oscurecimiento clásico */
+    border-color: #0a58ca;
+}
+
+/* Efecto Click / Foco (Focus Ring original de Bootstrap) */
+.btn-bootstrap-primary:focus, .btn-bootstrap-primary:active {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+    box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5); /* Sombreado exterior azul */
+    outline: 0;
+}
