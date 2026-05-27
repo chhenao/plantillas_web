@@ -1,0 +1,18 @@
+ body {
+     font-family: 'Open Sans', sans-serif;
+     line-height: 1.6;
+     color: #333;
+     max-width: 800px;
+     margin: 40px auto;
+     padding: 0 20px;
+ }
+
+ h1,
+ h2 {
+     font-family: 'Montserrat', sans-serif;
+     color: #47761e;
+ }
+
+ a {
+     color: #47761e;
+ }
