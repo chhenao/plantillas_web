@@ -206,56 +206,97 @@ nav a.nav-cta:hover {
   font-family: 'Montserrat', sans-serif;
 }
 
+ 
+/* ==========================================================================
+   TARJETAS DE PLANTILLAS MÁS PEQUEÑAS (COMPACTAS)
+   ========================================================================== */
+
+/* Cambiamos a un diseño automático que permite más tarjetas por fila (pasan de 3 a 4 o más en pantallas grandes) */
 .templates .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2em;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+  gap: 1.5em;
+  padding: 0 10px;
 }
 
-/* Template Card */
+/* Reducimos el espaciado interno (padding) de la tarjeta */
 .template-card {
   background-color: #f0efee;
-  border-radius: 10px;
-  padding: 1.5em;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  border-radius: 8px;
+  padding: 1em; /* Antes 1.5em */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+/* Reducimos considerablemente la altura de la imagen para que sea tipo "preview" compacta */
+.template-card img {
+  width: 100%;
+  height: 150px; /* Antes 250px (¡Mucho más pequeña!) */
+  border-radius: 6px;
+  margin-bottom: 0.8em;
+  object-fit: cover;
+}
+
+/* Ajustamos los textos para que vayan acorde al nuevo tamaño */
+.template-card h4 {
+  font-size: 1rem; /* Antes 1.2rem */
+  margin-top: 0;
+  margin-bottom: 0.4em;
+  font-weight: bold;
+  color: #111;
+}
+
+.template-card p {
+  font-size: 0.85em; /* Antes 0.95em */
+  margin-bottom: 0.8em;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Etiquetas técnicas un poco más discretas */
+.tech-tags {
+  font-size: 0.7rem; /* Antes 0.78rem */
+  color: #777;
+  margin: 2px 0 10px;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 3px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  align-self: center;
+}
+
+/* Hacemos el botón un poco más pequeño y estilizado */
+.template-card .btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5em 1em; /* Un poco más estrecho */
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  margin-top: auto; /* Empuja el botón siempre al fondo de la tarjeta */
+}
+
+/* Evitamos que en móviles se rompa el diseño compacto */
+@media (max-width: 580px) {
+  .templates .grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1em;
+  }
+}
+ 
+ 
+ 
 
 .template-card:hover {
   transform: translateY(-5px);
 }
-
-.template-card img {
-  width: 100%;
-  height: 250px;
-  border-radius: 6px;
-  margin-bottom: 1em;
-  object-fit: cover;
-}
-
-.template-card h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5em;
-  font-weight: bold;
-}
-
-.template-card p {
-  font-size: 0.95em;
-  margin-bottom: 1em;
-  color: #555;
-}
-
-/* Button inside card */
-.template-card .btn {
-  background-color: #007bff;
-  color: #fff;
-  padding: 0.6em 1.2em;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
+  
 
 .template-card .btn:hover {
   background-color: #0056b3;
