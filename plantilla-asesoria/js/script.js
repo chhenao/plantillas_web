@@ -66,4 +66,27 @@ if (whatsappBtn) {
         }
     });
 }
+
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const links = document.querySelectorAll('.nav-links a');
+
+    // Alternar menú al hacer clic en la hamburguesa
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Cerrar el menú automáticamente al hacer clic en cualquier enlace (para ir a la sección)
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    });
 });

@@ -1,26 +1,33 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const cookieBanner = document.getElementById("cookieBanner");
-    const btnAccept = document.getElementById("btnAcceptCookies");
-    const btnDeny = document.getElementById("btnDenyCookies");
+document.addEventListener('DOMContentLoaded', () => {
+    const cookieBanner = document.getElementById('cookieBanner');
+    const btnAccept = document.getElementById('btnAcceptCookies');
+    const btnDeny = document.getElementById('btnDenyCookies');
 
-    // Verificar si el usuario ya tomó una decisión previa
-    if (!localStorage.getItem("cookieConsent")) {
-        // Si no existe el registro, mostramos el banner quitando la clase 'hidden'
+    // Comprobar la decisión en el almacenamiento local del navegador
+    const cookieDecision = localStorage.getItem('aureum-cookies');
+
+    if (!cookieDecision) {
+        // Mostramos el banner quitando la clase 'hidden' tras 1.5 segundos
         setTimeout(() => {
-            cookieBanner.classList.remove("hidden");
-        }, 1000); // Pequeño retraso de 1 segundo para una entrada más elegante
+            if (cookieBanner) {
+                cookieBanner.classList.remove('hidden');
+            }
+        }, 1500);
     }
 
-    // Acción al Hacer Clic en Aceptar
-    btnAccept.addEventListener("click", function () {
-        localStorage.setItem("cookieConsent", "accepted");
-        cookieBanner.classList.add("hidden");
-        // Aquí puedes inicializar tus scripts de Google Analytics, píxeles, etc.
-    });
+    // Acción al pulsar "Aceptar"
+    if (btnAccept) {
+        btnAccept.addEventListener('click', () => {
+            localStorage.setItem('aureum-cookies', 'accepted');
+            cookieBanner.classList.add('hidden');
+        });
+    }
 
-    // Acción al Hacer Clic en Rechazar
-    btnDeny.addEventListener("click", function () {
-        localStorage.setItem("cookieConsent", "denied");
-        cookieBanner.classList.add("hidden");
-    });
+    // Acción al pulsar "Rechazar"
+    if (btnDeny) {
+        btnDeny.addEventListener('click', () => {
+            localStorage.setItem('aureum-cookies', 'denied');
+            cookieBanner.classList.add('hidden');
+        });
+    }
 });

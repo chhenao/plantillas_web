@@ -10,12 +10,22 @@
 <body>
 
     <!-- Header / Navegación -->
+   <!-- Header / Navegación -->
     <header class="navbar">
         <div class="logo">AUREUM<span>.</span></div>
+        
+        <!-- Botón Menú Hamburguesa (Solo visible en móviles por CSS) -->
+        <button class="menu-toggle" aria-label="Abrir menú de navegación">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <!-- Contenedor de enlaces -->
         <nav class="nav-links">
             <a href="#inicio" class="active">Inicio</a>
             <a href="#servicios">Servicios</a>
-            <a href="#sobre-nosotros">Sobre Mí</a> <!-- Enlace añadido -->
+            <a href="#sobre-nosotros">Sobre Mí</a>
             <a href="#contacto" class="btn-nav">Agendar Consulta</a>
             <a href="https://payhip.com/b/MEbXH" class="btn-nav" style="background-color: #0d6efd !important; color: #fff !important; border: 1px solid #0d6efd !important;">Comprar Plantilla</a>
         </nav>
@@ -147,7 +157,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
-                    <a href="#legal">Aviso Legal</a>
+                    <a href="legal.html">Aviso Legal</a>
                     <a href="privacidad.html">Política de Privacidad</a>
                     <a href="cookies.html">Política de Cookies</a> 
                 </div>
