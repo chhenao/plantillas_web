@@ -13,12 +13,7 @@ h4 {
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 0.5em;
 }
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
+ 
 
 /* Header */
 header {
@@ -355,16 +350,40 @@ nav a.nav-cta:hover {
 .close:hover {
   color: #000;
 }
+
+*******************************************
+
+/* ==========================================================================
+   BANNER DE ALTO IMPACTO VISUAL (DARK COUTURE STYLE)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   EFECTO INTERACTIVO DE ALTO IMPACTO (HOVER)
+   ========================================================================== */
+
+********************************************************** final
 /* Banner */
 .banner {
-  background: linear-gradient(135deg, #172431 0%, #3d4247 60%, #378add 100%);
-  color: #fff;
-  padding: 3rem 2rem 2.5rem;
-  border-radius: 0; /* o 16px si va dentro de un contenedor */
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    background-color: #0b0f19; /* Fondo ultra oscuro profundo */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(217, 119, 6, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 40%);
+    color: #f8fafc;
+    padding: 7rem 1.5rem;
+    border-bottom: 1px solid #1e293b;
+    overflow: hidden;
 }
 
+/* Contenedor con aislamiento z-index para que el texto flote sobre las luces */
+.container {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
 .banner::before {
   content: '';
   position: absolute;
@@ -384,73 +403,119 @@ nav a.nav-cta:hover {
   background: rgba(255, 255, 255, 0.04);
   pointer-events: none;
 }
-
+/* Etiqueta superior con sutil animación de pulso */
 .banner-tag {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.15);
-  border: 0.5px solid rgba(255, 255, 255, 0.25);
-  border-radius: 20px;
-  padding: 4px 14px;
-  margin-bottom: 1.2rem;
-  color: #b5d4f4;
+    display: inline-block;
+    background: linear-gradient(90deg, rgba(217,119,6,0.15) 0%, rgba(251,191,36,0.05) 100%);
+    color: #f59e0b; /* Amber 500 */
+    border: 1px solid rgba(217, 119, 6, 0.3);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px; /* Formato píldora de lujo */
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.1);
 }
 
+/* Título Principal de Impacto: Texto en Degradado Metálico */
 .banner h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0 0 1rem;
-  color: #fff;
-  text-shadow: none; /* anula el text-shadow global de h1 */
-  max-width: 560px;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
+@media (min-width: 768px) {
+    .banner h1 {
+        font-size: 4.5rem; /* Tamaño gigante en pantallas grandes */
+    }
+}
+
+/* Párrafo descriptivo cinematográfico */
 .banner p {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #b5d4f4;
-  max-width: 500px;
-  margin: 0 0 2rem;
+    color: #94a3b8;
+    max-width: 46rem;
+    margin: 0 auto 4rem auto;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    font-weight: 400;
 }
 
+
+/* Grid de las tarjetas */
 .banner-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 12px;
-  position: relative;
-  z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
+@media (min-width: 768px) {
+    .banner-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+/* Tarjetas Premium Asimétricas con Cristal esmerilado (Glassmorphism) */
 .banner-card {
-  background: rgba(255, 255, 255, 0.1);
-  border: 0.5px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  padding: 1rem 1.1rem;
-  transition: background 0.2s;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    padding: 2.25rem 1.75rem;
+    border-radius: 1.5rem;
+    text-align: left;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .banner-card:hover {
-  background: rgba(255, 255, 255, 0.17);
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(245, 158, 11, 0.5); /* Borde Ámbar brillante */
+    /* Sombra de neón ambiental */
+    box-shadow: 
+        0 20px 40px -15px rgba(0, 0, 0, 0.7),
+        0 0 30px rgba(217, 119, 6, 0.05);
 }
 
+
+
+/* Al pasar el ratón, el título de la tarjeta se ilumina en oro */
+.banner-card:hover h2 {
+    color: #f59e0b;
+}
+
+
+/* Título interno de la tarjeta */
 .banner-card h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  color: #fff;
-  margin: 0.5rem 0 4px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+} 
+
+/* Texto de la descripción de la tarjeta */
+.banner-card p {
+  color: #f59e0b; /* Slate 500 para contraste jerárquico */
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.6;
+    transition: color 0.3s ease;
 }
 
-.banner-card p {
-  font-size: 12px;
-  color: #85b7eb;
-  margin: 0;
-  line-height: 1.5;
+/* Al pasar el ratón, el texto descriptivo se vuelve más legible */
+.banner-card:hover p {
+    color: #cbd5e1; /* Slate 300 */
 }
 
 .banner .btn {
