@@ -17,7 +17,7 @@ h4 {
 
 /* Header */
 header {
-  background: linear-gradient(135deg, #378add 0%, #3d4247 60%, #378add 100%);
+  background: linear-gradient(135deg, #e8eaec 0%, #23374b 60%, #747f8a 100%);
   color: #fff;
   width: 100%;
   position: relative;
@@ -383,6 +383,17 @@ nav a.nav-cta:hover {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    
+}
+
+.container1 {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(243, 241, 241);
+    
 }
 .banner::before {
   content: '';
@@ -741,6 +752,26 @@ h1 {
   #nav-menu.open {
     display: block;
   }
+
+  @media (max-width: 768px) { /* O el breakpoint que uses para el móvil */
+    
+    #nav-menu {
+        position: absolute;   /* Permite posicionarlo libremente respecto a la cabecera */
+        top: 100%;            /* ¡CLAVE! Empuja el menú justo debajo del límite inferior del header */
+        left: 0;
+        width: 100%;
+        
+        z-index: 999;         /* ¡CLAVE! Asegura que el menú flote por encima de cualquier otro elemento de la web */
+        
+        background-color: #110e0e; /* Pon el color de fondo que use tu diseño para que no sea transparente */
+        
+        /* ... el resto de tus estilos actuales (display, padding, etc.) ... */
+    }
+    header {
+        position: relative; 
+        z-index: 1000;        /* El header base siempre debe estar bien arriba */
+    }
+}
 
   #nav-menu ul {
     flex-direction: column;
