@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Estilos personalizados nativos - Habitat Premium Inmobiliaria
+   ========================================================================== */
+
+/* Suavizado global de transiciones para efectos hover */
+.group, .transition, button, a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ajuste manual para el difuminado de los orbes traseros decorativos */
+.blur-2xl {
+    filter: blur(40px);
+}
+
+/* Comportamiento de las imágenes en las tarjetas de propiedades */
+.object-cover {
+    object-position: center;
+}
+
+/* Efecto sombra suave personalizado para el menú de navegación dinámico */
+.nav-scrolled {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+
+/* Estados para mostrar/ocultar el banner de cookies con suavidad */
+.cookie-visible {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
