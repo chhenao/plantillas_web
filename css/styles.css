@@ -13,7 +13,7 @@ h4 {
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 0.5em;
 }
- 
+
 
 /* Header */
 header {
@@ -73,7 +73,8 @@ nav a.nav-cta:hover {
 
 /* Logo */
 .logo img {
-  height: 100px; /* ajusta el valor que necesites */
+  height: 100px;
+  /* ajusta el valor que necesites */
   width: auto;
   display: block;
 }
@@ -124,7 +125,7 @@ nav a.nav-cta:hover {
 }
 
 /* Footer */
- footer {
+footer {
   background: #0f172a;
   color: #cbd5e1;
   padding: 40px 20px;
@@ -201,7 +202,7 @@ nav a.nav-cta:hover {
   font-family: 'Montserrat', sans-serif;
 }
 
- 
+
 /* ==========================================================================
    TARJETAS DE PLANTILLAS MÁS PEQUEÑAS (COMPACTAS)
    ========================================================================== */
@@ -209,7 +210,7 @@ nav a.nav-cta:hover {
 /* Cambiamos a un diseño automático que permite más tarjetas por fila (pasan de 3 a 4 o más en pantallas grandes) */
 .templates .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1.5em;
   padding: 0 10px;
 }
@@ -218,7 +219,8 @@ nav a.nav-cta:hover {
 .template-card {
   background-color: #f0efee;
   border-radius: 8px;
-  padding: 1em; /* Antes 1.5em */
+  padding: 1em;
+  /* Antes 1.5em */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -229,7 +231,8 @@ nav a.nav-cta:hover {
 /* Reducimos considerablemente la altura de la imagen para que sea tipo "preview" compacta */
 .template-card img {
   width: 100%;
-  height: 150px; /* Antes 250px (¡Mucho más pequeña!) */
+  height: 150px;
+  /* Antes 250px (¡Mucho más pequeña!) */
   border-radius: 6px;
   margin-bottom: 0.8em;
   object-fit: cover;
@@ -237,7 +240,8 @@ nav a.nav-cta:hover {
 
 /* Ajustamos los textos para que vayan acorde al nuevo tamaño */
 .template-card h4 {
-  font-size: 1rem; /* Antes 1.2rem */
+  font-size: 1rem;
+  /* Antes 1.2rem */
   margin-top: 0;
   margin-bottom: 0.4em;
   font-weight: bold;
@@ -245,7 +249,8 @@ nav a.nav-cta:hover {
 }
 
 .template-card p {
-  font-size: 0.85em; /* Antes 0.95em */
+  font-size: 0.85em;
+  /* Antes 0.95em */
   margin-bottom: 0.8em;
   color: #555;
   line-height: 1.4;
@@ -253,7 +258,8 @@ nav a.nav-cta:hover {
 
 /* Etiquetas técnicas un poco más discretas */
 .tech-tags {
-  font-size: 0.7rem; /* Antes 0.78rem */
+  font-size: 0.7rem;
+  /* Antes 0.78rem */
   color: #777;
   margin: 2px 0 10px;
   background: rgba(0, 0, 0, 0.04);
@@ -267,14 +273,16 @@ nav a.nav-cta:hover {
 .template-card .btn {
   background-color: #007bff;
   color: #fff;
-  padding: 0.5em 1em; /* Un poco más estrecho */
+  padding: 0.5em 1em;
+  /* Un poco más estrecho */
   font-size: 0.85rem;
   text-decoration: none;
   border-radius: 4px;
   font-weight: bold;
   display: inline-block;
   transition: background-color 0.3s ease;
-  margin-top: auto; /* Empuja el botón siempre al fondo de la tarjeta */
+  margin-top: auto;
+  /* Empuja el botón siempre al fondo de la tarjeta */
 }
 
 /* Evitamos que en móviles se rompa el diseño compacto */
@@ -284,14 +292,14 @@ nav a.nav-cta:hover {
     gap: 1em;
   }
 }
- 
- 
- 
+
+
+
 
 .template-card:hover {
   transform: translateY(-5px);
 }
-  
+
 
 .template-card .btn:hover {
   background-color: #0056b3;
@@ -352,7 +360,6 @@ nav a.nav-cta:hover {
 }
 
 *******************************************
-
 /* ==========================================================================
    BANNER DE ALTO IMPACTO VISUAL (DARK COUTURE STYLE)
    ========================================================================== */
@@ -363,43 +370,48 @@ nav a.nav-cta:hover {
    ========================================================================== */
 
 ********************************************************** final
+
 /* Banner */
 .banner {
-    position: relative;
-    background-color: #0b0f19; /* Fondo ultra oscuro profundo */
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(217, 119, 6, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 40%);
-    color: #f8fafc;
-    padding: 7rem 1.5rem;
-    border-bottom: 1px solid #1e293b;
-    overflow: hidden;
+  position: relative;
+  background-color: #0b0f19;
+  /* Fondo ultra oscuro profundo */
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(217, 119, 6, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 40%);
+  color: #f8fafc;
+  padding: 7rem 1.5rem;
+  border-bottom: 1px solid #1e293b;
+  overflow: hidden;
 }
 
 /* Contenedor con aislamiento z-index para que el texto flote sobre las luces */
 .container {
-    position: relative;
-    z-index: 10;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+
 }
 
 .container1 {
-    position: relative;
-    z-index: 10;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: rgb(236, 233, 233);
-    
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgb(236, 233, 233);
+
 }
+
 .banner::before {
   content: '';
   position: absolute;
-  top: -60px; right: -60px;
-  width: 260px; height: 260px;
+  top: -60px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.06);
   pointer-events: none;
@@ -408,125 +420,134 @@ nav a.nav-cta:hover {
 .banner::after {
   content: '';
   position: absolute;
-  bottom: -40px; left: -40px;
-  width: 180px; height: 180px;
+  bottom: -40px;
+  left: -40px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.04);
   pointer-events: none;
 }
+
 /* Etiqueta superior con sutil animación de pulso */
 .banner-tag {
-    display: inline-block;
-    background: linear-gradient(90deg, rgba(217,119,6,0.15) 0%, rgba(251,191,36,0.05) 100%);
-    color: #f59e0b; /* Amber 500 */
-    border: 1px solid rgba(217, 119, 6, 0.3);
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    padding: 0.5rem 1rem;
-    border-radius: 9999px; /* Formato píldora de lujo */
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.1);
+  display: inline-block;
+  background: linear-gradient(90deg, rgba(217, 119, 6, 0.15) 0%, rgba(251, 191, 36, 0.05) 100%);
+  color: #f59e0b;
+  /* Amber 500 */
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  /* Formato píldora de lujo */
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.1);
 }
 
 /* Título Principal de Impacto: Texto en Degradado Metálico */
 .banner h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
-    background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  
 }
 
 @media (min-width: 768px) {
-    .banner h1 {
-        font-size: 4.5rem; /* Tamaño gigante en pantallas grandes */
-    }
+  .banner h1 {
+    font-size: 4.5rem;
+    /* Tamaño gigante en pantallas grandes */
+  }
 }
 
 /* Párrafo descriptivo cinematográfico */
 .banner p {
-    color: #94a3b8;
-    max-width: 46rem;
-    margin: 0 auto 4rem auto;
-    font-size: 1.125rem;
-    line-height: 1.75;
-    font-weight: 400;
+  color: #0c0e0f;
+  max-width: 46rem;
+  margin: 0 auto 4rem auto;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  font-weight: 400;
 }
 
 
 /* Grid de las tarjetas */
 .banner-cards {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 @media (min-width: 768px) {
-    .banner-cards {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+  .banner-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 
 /* Tarjetas Premium Asimétricas con Cristal esmerilado (Glassmorphism) */
 .banner-card {
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(51, 65, 85, 0.5);
-    padding: 2.25rem 1.75rem;
-    border-radius: 1.5rem;
-    text-align: left;
-    position: relative;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  padding: 2.25rem 1.75rem;
+  border-radius: 1.5rem;
+  text-align: left;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .banner-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    border-color: rgba(245, 158, 11, 0.5); /* Borde Ámbar brillante */
-    /* Sombra de neón ambiental */
-    box-shadow: 
-        0 20px 40px -15px rgba(0, 0, 0, 0.7),
-        0 0 30px rgba(217, 119, 6, 0.05);
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(245, 158, 11, 0.5);
+  /* Borde Ámbar brillante */
+  /* Sombra de neón ambiental */
+  box-shadow:
+    0 20px 40px -15px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(217, 119, 6, 0.05);
 }
 
 
 
 /* Al pasar el ratón, el título de la tarjeta se ilumina en oro */
 .banner-card:hover h2 {
-    color: #f59e0b;
+  color: #f59e0b;
 }
 
 
 /* Título interno de la tarjeta */
 .banner-card h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 0.75rem;
-    transition: color 0.3s ease;
-} 
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
 
 /* Texto de la descripción de la tarjeta */
 .banner-card p {
-  color: #f59e0b; /* Slate 500 para contraste jerárquico */
-    font-size: 0.9rem;
-    margin: 0;
-    line-height: 1.6;
-    transition: color 0.3s ease;
+  color: #f59e0b;
+  /* Slate 500 para contraste jerárquico */
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.6;
+  transition: color 0.3s ease;
 }
 
 /* Al pasar el ratón, el texto descriptivo se vuelve más legible */
 .banner-card:hover p {
-    color: #cbd5e1; /* Slate 300 */
+  color: #cbd5e1;
+  /* Slate 300 */
 }
 
 .banner .btn {
@@ -627,7 +648,7 @@ nav a.nav-cta:hover {
 h1 {
   font-size: 50px;
   font-family: 'Arial Black', sans-serif;
-  color: #2c2a2a;
+  color: #130101;
   text-shadow:
     1px 1px 0 #999,
     2px 2px 0 #888,
@@ -702,9 +723,11 @@ h1 {
 .hamburger.active span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
+
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.active span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
@@ -754,25 +777,32 @@ h1 {
     display: block;
   }
 
-  @media (max-width: 768px) { /* O el breakpoint que uses para el móvil */
-    
+  @media (max-width: 768px) {
+    /* O el breakpoint que uses para el móvil */
+
     #nav-menu {
-        position: absolute;   /* Permite posicionarlo libremente respecto a la cabecera */
-        top: 100%;            /* ¡CLAVE! Empuja el menú justo debajo del límite inferior del header */
-        left: 0;
-        width: 100%;
-        
-        z-index: 999;         /* ¡CLAVE! Asegura que el menú flote por encima de cualquier otro elemento de la web */
-        
-        background-color: #110e0e; /* Pon el color de fondo que use tu diseño para que no sea transparente */
-        
-        /* ... el resto de tus estilos actuales (display, padding, etc.) ... */
+      position: absolute;
+      /* Permite posicionarlo libremente respecto a la cabecera */
+      top: 100%;
+      /* ¡CLAVE! Empuja el menú justo debajo del límite inferior del header */
+      left: 0;
+      width: 100%;
+
+      z-index: 999;
+      /* ¡CLAVE! Asegura que el menú flote por encima de cualquier otro elemento de la web */
+
+      background-color: #110e0e;
+      /* Pon el color de fondo que use tu diseño para que no sea transparente */
+
+      /* ... el resto de tus estilos actuales (display, padding, etc.) ... */
     }
+
     header {
-        position: relative; 
-        z-index: 1000;        /* El header base siempre debe estar bien arriba */
+      position: relative;
+      z-index: 1000;
+      /* El header base siempre debe estar bien arriba */
     }
-}
+  }
 
   #nav-menu ul {
     flex-direction: column;
